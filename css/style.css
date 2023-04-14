@@ -1,0 +1,67 @@
+
+main {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 40px;
+}
+
+nav {
+  background-color: gray;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  background-color: gray;
+  display: inline-block;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  padding: 14px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: darkgray;
+}
+
+.posts {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.post { 
+  padding: 40px;
+  border-bottom: 3px;
+  border-color: black;
+  border-bottom-style: solid;
+  margin: auto;
+}
+
+.reactions {
+  display: flex;
+  flex-direction: row;
+}
+
+.reactions img {
+  width: 20px;
+  height: 20px;
+}
+
+.albumArt {
+  width: 400px;
+  height: 400px;
+}
