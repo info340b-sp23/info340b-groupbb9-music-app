@@ -1,5 +1,5 @@
 Thumbnail:
-To get thumbnail from a yt link, do https://img.youtube.com/vi/<YOUTUBE-VIDEO-ID>/hqdefault.jpg
+To get thumbnail from a yt link, do https://img.youtube.com/vi/YOURVIDEOIDHERE/hqdefault.jpg
 For example, user uploaded link, https://www.youtube.com/watch?v=Sk9rrM3DoFU, then the thumbnail should be
 https://img.youtube.com/vi/Sk9rrM3DoFU/hqdefault.jpg
 
