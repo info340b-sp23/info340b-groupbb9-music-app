@@ -1,4 +1,6 @@
-
+* {
+  box-sizing: border-box;
+}
 main {
   box-sizing: border-box;
   width: 100%;
@@ -64,4 +66,99 @@ li a:hover {
 .albumArt {
   width: 400px;
   height: 400px;
+}
+
+@keyframes gradientBg {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+body {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.login_body, footer {
+  background: linear-gradient(270deg, #6e00a6, #e500b5, #ff5a5a);
+  background-size: 600% 600%;
+  animation: gradientBg 15s ease infinite;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+h1 {
+  position: relative;
+  left: 1rem;
+  color: ghostwhite;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  color: ghostwhite;
+}
+
+input {
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: bolder;
+  padding: 10px;
+  background-color: white;
+  width: 100%;
+  cursor: pointer;
+}
+.login_reactive_field {
+  border: 7px solid white;
+  border-radius: 15px;
+}
+
+.login_button {
+  text-decoration: none;
+
+}
+
+button:hover {
+  background-color: lightgrey;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+}
+
+footer p {
+  margin: 0;
 }
