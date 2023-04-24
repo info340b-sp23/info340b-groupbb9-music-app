@@ -94,7 +94,7 @@ body {
   min-height: 100vh;
 }
 
-.login_body, footer {
+.login_body, .login_footer {
   background: linear-gradient(270deg, #ff6978, #b1ede8);
   background-size: 600% 600%;
   animation: gradientBg 15s ease infinite;
@@ -229,7 +229,7 @@ footer p {
 }
 
 .profile-favorite-artists li, .profile-favorite-genres li, .profile-favorite-songs li {
-  margin-right: 6px;
+  margin-bottom: 13px;
   border: 6px solid #fffcf9;
   border-radius: 17px;
   padding: 7px;
