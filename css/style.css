@@ -92,7 +92,7 @@ body {
 }
 
 .login_body, footer {
-  background: linear-gradient(270deg, #E6E6FA, #AEC6CF, #FFE5B4);
+  background: linear-gradient(270deg, #ff6978, #b1ede8);
   background-size: 600% 600%;
   animation: gradientBg 15s ease infinite;
 }
@@ -162,3 +162,73 @@ footer {
 footer p {
   margin: 0;
 }
+
+/* css rules for profile page */
+.profile_heading {
+  color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-right: 4px solid #352d39;
+  border-bottom: 4px solid #352d39;
+  padding-right: 4px;
+}
+.profile_home {
+  position: fixed;
+  top: 0;
+  left: 50vw;
+  border-left: 4px solid #352d39;
+  border-right: 4px solid #352d39;
+  border-bottom: 4px solid #352d39;
+  margin-left: 6vw;
+  padding: 13px 30px;
+}
+
+.profile_link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #352d39;
+}
+
+.profile_link:hover {
+  color: #fffcf9;
+}
+
+.profile_body {
+  background-color: #ff6978;
+}
+.profile-container {
+  margin-top: 20px;
+}
+
+.profile-picture {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.profile-username {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.profile-bio {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.profile-favorite-artists, .profile-favorite-genres, .profile-favorite-songs {
+  background-color: #fffcf900;
+  padding: 0;
+}
+
+.profile-favorite-artists li, .profile-favorite-genres li, .profile-favorite-songs li {
+  margin-right: 6px;
+  border: 6px solid #fffcf9;
+  border-radius: 17px;
+  padding: 7px;
+}
+/* ------------------------------------------ */
