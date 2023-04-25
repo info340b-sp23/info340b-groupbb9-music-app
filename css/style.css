@@ -98,7 +98,7 @@ footer p {
   margin: 0;
 }
 
-/* main style(class selectors) */
+/* additional style(class selectors) */
 .posts {
   display: flex;
   justify-content: center;
