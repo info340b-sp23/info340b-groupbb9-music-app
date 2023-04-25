@@ -50,6 +50,11 @@ nav a {
   text-decoration: none;
 }
 
+a {
+  text-decoration: none;
+  color: #fffcf9;
+}
+
 h1 {
   position: relative;
   left: 1rem;
@@ -180,9 +185,7 @@ footer p {
 }
 
 .profile_link {
-  text-decoration: none;
   font-weight: bold;
-  color: #352d39;
 }
 
 .profile_link:hover {
@@ -204,6 +207,7 @@ footer p {
   border-radius: 50%;
   display: block;
   margin-bottom: 20px;
+  box-shadow: 0 0 10px 4px rgba(0, 30, 50, 0.5);
 }
 
 .profile-username {
