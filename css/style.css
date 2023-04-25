@@ -54,6 +54,7 @@ h1 {
   position: relative;
   left: 1rem;
   color: ghostwhite;
+  text-shadow: 3px 3px 5px rgba(0, 50, 100, 0.5);
   font-size: 40px;
   margin-bottom: 20px;
 }
