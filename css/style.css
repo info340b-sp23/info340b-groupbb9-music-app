@@ -1,6 +1,23 @@
+/* base style(type selectors) */
 * {
   box-sizing: border-box;
 }
+
+html {
+  font-size: 1em;
+}
+
+body {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 main {
   width: 100%;
   margin-top: 100px;
@@ -31,81 +48,6 @@ nav a {
   padding: 14px 16px;
   color: black;
   text-decoration: none;
-
-}
-
-li a:hover {
-  background-color: darkgray;
-}
-
-.posts {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 50%;
-  margin: auto;
-}
-
-.post { 
-  padding: 40px;
-  border-bottom: 3px;
-  border-color: black;
-  border-bottom-style: solid;
-  margin: auto;
-}
-
-.reactions {
-  display: flex;
-  flex-direction: row;
-}
-
-.reactions img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-
-.albumArt {
-  width: 400px;
-  height: 400px;
-}
-
-@keyframes gradientBg {
-  0% {
-      background-position: 0% 50%;
-  }
-  50% {
-      background-position: 100% 50%;
-  }
-  100% {
-      background-position: 0% 50%;
-  }
-}
-
-body {
-  font-family: "Gill Sans", sans-serif;  
-  font-size: 16px;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.login_body, .login_footer {
-  background: linear-gradient(270deg, #ff6978, #b1ede8);
-  background-size: 600% 600%;
-  animation: gradientBg 15s ease infinite;
-}
-
-.container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
 }
 
 h1 {
@@ -140,15 +82,6 @@ button {
   width: 100%;
   cursor: pointer;
 }
-.login_reactive_field {
-  border: 7px solid white;
-  border-radius: 15px;
-}
-
-.login_button {
-  text-decoration: none;
-
-}
 
 button:hover {
   background-color: lightgrey;
@@ -165,7 +98,64 @@ footer p {
   margin: 0;
 }
 
-/* css rules for profile page */
+/* main style(class selectors) */
+.posts {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+
+.post {
+  padding: 40px;
+  border-bottom: 3px;
+  border-color: black;
+  border-bottom-style: solid;
+  margin: auto;
+}
+
+.reactions {
+  display: flex;
+  flex-direction: row;
+}
+
+.reactions img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.albumArt {
+  width: 400px;
+  height: 400px;
+}
+
+.login_body, .login_footer {
+  background: linear-gradient(270deg, #ff6978, #b1ede8);
+  background-size: 600% 600%;
+  animation: gradientBg 15s ease infinite;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login_reactive_field {
+  border: 7px solid white;
+  border-radius: 15px;
+}
+
+.login_button {
+  text-decoration: none;
+}
+
+/* Profile page styles */
 .profile_heading {
   color: black;
   position: fixed;
@@ -175,6 +165,7 @@ footer p {
   border-bottom: 4px solid #352d39;
   padding-right: 4px;
 }
+
 .profile_home {
   position: fixed;
   top: 0;
@@ -199,6 +190,7 @@ footer p {
 .profile_body {
   background-color: #ff6978;
 }
+
 .profile-container {
   margin-top: 20px;
 }
@@ -233,4 +225,17 @@ footer p {
   border-radius: 17px;
   padding: 7px;
 }
-/* ------------------------------------------ */
+
+/* Keyframes */
+@keyframes gradientBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
