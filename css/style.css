@@ -162,34 +162,17 @@ footer p {
 }
 
 /* Profile page styles */
-.profile_heading {
-  color: black;
-  text-shadow: 3px 3px 2px rgba(0, 50, 100, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-right: 4px solid #352d39;
-  border-bottom: 4px solid #352d39;
-  padding-right: 4px;
-}
-
-.profile_home {
-  position: fixed;
-  top: 0;
-  left: 50vw;
-  border-left: 4px solid #352d39;
-  border-right: 4px solid #352d39;
-  border-bottom: 4px solid #352d39;
-  margin-left: 6vw;
-  padding: 13px 30px;
+#profile_main {
+  margin-top: 100px;
 }
 
 .profile_link {
   font-weight: bold;
+  color: black;
 }
 
 .profile_link:hover {
-  color: #fffcf9;
+  color: #6D435A;
 }
 
 .profile_body {
@@ -227,6 +210,7 @@ footer p {
 .profile-favorite-artists li, .profile-favorite-genres li, .profile-favorite-songs li {
   margin-bottom: 13px;
   border: 6px solid #fffcf9;
+  background-color: #fffcf9;
   border-radius: 17px;
   padding: 7px;
 }
