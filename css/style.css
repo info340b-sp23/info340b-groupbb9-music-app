@@ -211,6 +211,7 @@ footer p {
 .profile-username {
   font-size: 3rem;
   margin-bottom: 10px;
+  text-shadow: 2px 1px 6px rgba(0, 50, 100, 0.5) ;
 }
 
 .profile-bio {
