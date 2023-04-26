@@ -6,13 +6,16 @@
   <meta name="author" content="Miles Lang, ">
   <meta name="description" content="This website offers a way for friends to share their favorite music with each other
    and allows them to like, comment, and listen to their friends' posts.">
+  <script type="text/javascript" src="helper.js"></script>
 </head>
 <body>
   <main>
     <nav>
-      <a href="index.html"><span aria-label="Home"><img src="img/beatbuds.png"></span></a>
-      <a href="profile.html" id="accountButton">Account</a>
-      <a href="newpost.html" id="addPost">New Post</a>
+      <a href="index.html"><span aria-label="Home"><img src="img/beatbuds.png" alt="logo"></span></a>
+      <div class="nav-right">
+        <a href="newpost.html" id="addPost">New Post</a>
+        <a id="accountButton" onclick="accountDirect()"><img src="img/default_account_logo.png" alt="Login"></a>
+      </div>
     </nav>
     <div class="posts">
       <div class="post">

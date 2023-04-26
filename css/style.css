@@ -21,7 +21,6 @@ body {
 main {
   width: 100%;
   margin-top: 100px;
-  background-color: #FFFCF9;
 }
 
 nav {
@@ -33,6 +32,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between
 }
 
 nav img {
@@ -40,6 +40,13 @@ nav img {
   height: 50px;
   padding: 0;
   margin: 0;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 nav a {
@@ -158,7 +165,7 @@ footer p {
 }
 
 .login_reactive_field {
-  border: 7px solid white;
+  border: 3px solid black;
   border-radius: 15px;
 }
 
