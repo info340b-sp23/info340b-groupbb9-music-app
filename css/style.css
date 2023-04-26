@@ -166,6 +166,10 @@ footer p {
   text-decoration: none;
 }
 
+.username {
+  font-weight: bold;
+}
+
 /* Profile page styles */
 #profile_main {
   margin-top: 100px;
@@ -223,7 +227,23 @@ footer p {
 /*new post css*/
 .new_post_form {
   width: 30%;
-  margin-left: 20%;
+  margin: auto;
+  color: black;
+}
+
+.newpost_heading {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  color: black;
+}
+
+/*login page css*/
+.login_reactive_field .login_button{
+  color: black;
 }
 
 /* Keyframes */
