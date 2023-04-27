@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/comment.css">
+  <meta name="author" content="Ryotaro Hayashi">
+  <meta name="description" content="This is a view-post page where users can see the detail information of the post and click likes and make comments">
+  <script type="text/javascript" src="helper.js"></script>
+  <title>Comment Box 1</title>
+</head>
+<body>
+  <div class="content">
+    <div class="music-post">
+      <img src="img/Maroon_TaylorSwift.jpeg" alt="Album Image" class="album-image">
+      <!-- Your music post content here -->
+    </div>
+    <div class="comments-section">
+      <h3>Comments</h3>
+      <div class="comment-form">
+        <input type="text" id="name" placeholder="Your Name">
+        <textarea id="comment" rows="4" cols="50" placeholder="Write your comment here..."></textarea>
+        <button id="submit">Submit</button>
+      </div>
+      <div class="comments-list">
+        <div class="comment">
+          <p class="comment-user">ryo.h</p>
+          <p class="comment-text">I love this song lol</p>
+        </div>
+        <!-- More comments will appear here -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
