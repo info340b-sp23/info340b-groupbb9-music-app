@@ -152,7 +152,7 @@ footer p {
 .login_body, .login_footer {
   background: linear-gradient(270deg, #ff6978, #b1ede8);
   background-size: 600% 600%;
-  animation: gradientBg 15s ease infinite;
+  animation: gradientBg 20s ease infinite;
 }
 
 .login_footer {
