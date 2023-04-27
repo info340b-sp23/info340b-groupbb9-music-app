@@ -1,66 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Comment & Feedback</title>
-	<meta name="description" content="feedback comment box form" />
-    <meta name="author" content="Ryotaro Hayashi" />
-    <link rel="stylesheet" type="text/css" href="css/comment.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/comment.css">
+  <title>Music Social Media App</title>
 </head>
 <body>
-  <main>
-    <header>
-      <nav>
-        <a href="index.html"><span aria-label="Home"><img src="img/beatbuds.png" alt="logo"></span></a>
-        <div class="nav-right">
-          <a href="newpost.html" id="addPost">New Post</a>
-          <a id="accountButton" onclick="accountDirect()"><img src="img/default_account_logo.png" alt="Login"></a>
-        </div>
-      </nav>
-    </header>
-    <section>
-      <div class="rt-container">
-        <div class="col-rt-1">   
-          <div class="content">
-            <h1>(1) Readers Comments </h1>
-            <div id="reader">
-              <ol>
-                <li> 
-                  <div class="comment_box"> <a href="#"> <img src="img/default_account_logo.png" alt="avatar"> </a>
-                    <div class="inside_comment">
-                      <div class="comment-meta">
-                        <div class="commentsuser">ryo.h</div>
-                        <div class="comment_date">April 26, 2023 at 4:35 pm</div>
-                      </div>
-                    </div>
-                    <div class="comment-body">
-                      <p>I love this song too lol</p>
-                    </div>
-                    <div class="reply"> <a href="#">Reply</a> </div>
-                    <div class="arrow-down"></div>
-                  </div>
-                  <ul class="children">
-                <li>      
-               </ol>
-            </div>
-            <div id="respond">
-              <h2>Leave A Response</h2>
-              <form id="commentForm" method="post" class="cmxform">
-                <div class="commentfields">
-                  <label>Comment</label>
-                  <textarea id="ccomment" class="comment-textarea" name="comment"></textarea>
-                </div>
-                <div class="commentfields">
-                  <input class="commentbtn" type="submit" value="Post Comment">
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+  <div class="content">
+    <div class="music-post">
+      <img src="Maroon_TaylorSwift.jpeg" alt="Album Image" class="album-image">
+      <!-- Your music post content here -->
+    </div>
+    <div class="comments-section">
+      <h3>Comments</h3>
+      <div class="comment-form">
+        <input type="text" id="name" placeholder="Your Name">
+        <textarea id="comment" rows="4" cols="50" placeholder="Write your comment here..."></textarea>
+        <button id="submit">Submit</button>
       </div>
-  </section>
-  </main>
+      <div class="comments-list">
+        <div class="comment">
+          <p class="comment-user">ryo.h</p>
+          <p class="comment-text">I love this song lol</p>
+        </div>
+        <!-- More comments will appear here -->
+      </div>
+    </div>
+  </div>
 </body>
 </html>
