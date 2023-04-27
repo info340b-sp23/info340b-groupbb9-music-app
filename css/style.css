@@ -105,6 +105,8 @@ footer {
   color: #fff;
   padding: 20px;
   text-align: center;
+  margin-bottom: 0;
+  margin-top: auto;
 }
 
 footer p {
