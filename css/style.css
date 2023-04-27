@@ -105,6 +105,8 @@ footer {
   color: #fff;
   padding: 20px;
   text-align: center;
+  margin-bottom: 0;
+  margin-top: auto;
 }
 
 footer p {
@@ -116,12 +118,12 @@ footer p {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 70%;
+  width: 70%em;
   margin: auto;
 }
 
 .post {
-  padding: 40px;
+  padding: 4em;
   border-bottom: 3px;
   border-color: black;
   border-bottom-style: solid;
