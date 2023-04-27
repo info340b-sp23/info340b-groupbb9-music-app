@@ -1,3 +1,12 @@
+/* base style(type selectors) */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1em;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -14,11 +23,24 @@ body {
   flex: 1;
   max-width: 600px;
   margin-right: 20px;
+  padding: 4em;
+  border-bottom: 3px;
+  border-color: black;
+  border-bottom-style: solid;
 }
 
-.album-image {
-  width: 100%;
-  height: auto;
+.albumArt {
+  width: 500px;
+  height: 500px;
+  transition: all 0.3s ease-in-out;
+}
+
+.albumArt:hover {
+  transform: scale(1.05);
+}
+
+.username {
+  font-weight: bold;
 }
 
 .comments-section {
