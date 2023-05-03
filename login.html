@@ -7,10 +7,9 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="author" content="Miles Lang, ">
+      <meta name="author" content="Miles Lang, Ryotaro Hayashi, Steven Yang, Wen Chi Cheng">
       <meta name="description" content="This website offers a way for friends to share their favorite music with each other
       and allows them to like, comment, and listen to their friends' posts.">
-      <script type="text/javascript" src="helper.js"></script>
   </head>
   <main>  
     <body class="login_body">
@@ -18,7 +17,7 @@
         <a href="index.html"><span aria-label="Home"><img src="img/beatbuds.png" alt="logo"></span></a>
         <div class="nav-right">
           <a href="newpost.html" id="addPost">New Post</a>
-          <a id="accountButton" onclick="accountDirect()"><img src="img/default_account_logo.png" alt="Login"></a>
+          <a id="accountButton"><img src="img/default_account_logo.png" alt="Login" id="accountImg"></a>
         </div>
       </nav>
       <div class="container">
@@ -32,12 +31,13 @@
             <label for="password">Password:</label>
             <input class="login_reactive_field" type="password" id="password" name="password" >
 
-            <button type="button" class="login_reactive_field" id="loginButton" onclick="login()">Login</button>
+            <button type="button" class="login_reactive_field" id="loginButton">Login</button>
           </form>
       </div>
       <footer class="login_footer">
         <p>&copy; 2023 BeatBuds.  All rights reserved.</p>
       </footer>
+      <script type="text/javascript" src="helper.js"></script>
     </body>
   </main>
 </html>
