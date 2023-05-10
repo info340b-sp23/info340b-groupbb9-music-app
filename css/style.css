@@ -314,6 +314,7 @@ label {
 .comment-comments-section {
   flex: 1;
   max-width: 400px;
+  margin-top: 80px;
 }
 
 .comment-form {
