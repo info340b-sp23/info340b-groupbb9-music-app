@@ -280,3 +280,80 @@ label {
   }
 }
 
+/*comment_viewpost css*/
+.comment-content {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.comment-music-post {
+  flex: 1;
+  max-width: 600px;
+  margin-right: 20px;
+  padding: 4em;
+  border-bottom: 3px;
+  border-color: black;
+  border-bottom-style: solid;
+}
+
+.comment-albumArt {
+  width: 500px;
+  height: 500px;
+  transition: all 0.3s ease-in-out;
+}
+
+.comment-albumArt:hover {
+  transform: scale(1.05);
+}
+
+.comment-username {
+  font-weight: bold;
+}
+
+.comment-comments-section {
+  flex: 1;
+  max-width: 400px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.comment-input, .comment-textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comment-button {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-button:hover {
+  background-color: #1f776d;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.comment-user {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comment-text {
+  margin: 0;
+}
+

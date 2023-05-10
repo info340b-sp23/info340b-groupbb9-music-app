@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/comment.css">
+  <link rel="stylesheet" href="css/style.css">
   <meta name="author" content="Ryotaro Hayashi">
   <meta name="description" content="This is a view-post page where users can see the detail information of the post and click likes and make comments">
   <script type="text/javascript" src="helper.js"></script>
   <title>Comment Box 1</title>
 </head>
 <body>
-  <div class="content">
-    <div class="music-post">
-        <p class="username">ryo.h</p>
-        <a href="https://www.youtube.com/watch?v=x8VYWazR5mE"><img src="img/racingintothenight_Yoasobi.jpeg" alt="album artwork" class="albumArt"></a>
+  <div class="comment-content">
+    <div class="comment-music-post">
+        <p class="comment-username">ryo.h</p>
+        <a href="https://www.youtube.com/watch?v=x8VYWazR5mE"><img src="img/racingintothenight_Yoasobi.jpeg" alt="album artwork" class="comment-albumArt"></a>
         <p>Racing into the night - Yoasobi</p>
       <!-- user's music post content here -->
     </div>
-    <div class="comments-section">
+    <div class="comment-comments-section">
       <h3>Comments</h3>
       <div class="comment-form">
-        <input type="text" id="name" placeholder="Your Name">
-        <textarea id="comment" rows="4" cols="50" placeholder="Write your comment here..."></textarea>
-        <button id="submit">Submit</button>
+        <input type="text" id="name" class="comment-input" placeholder="Your Name">
+        <textarea id="comment" class="comment-textarea" rows="4" cols="50" placeholder="Write your comment here..."></textarea>
+        <button id="submit" class="comment-button">Submit</button>
       </div>
       <div class="comments-list">
         <div class="comment">
