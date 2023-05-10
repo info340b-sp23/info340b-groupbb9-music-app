@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+  <title>BeatBuds</title> 
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="img/beatbuds.png">
+  <meta name="author" content="Miles Lang, Ryotaro Hayashi">
+  <meta name="description" content="This website offers a way for friends to share their favorite music with each other
+   and allows them to like, comment, and listen to their friends' posts.">
+  <script type="text/javascript" src="helper.js"></script>
+</head>
+<body>
+  <main>
+    <nav>
+      <a href="index.html"><span aria-label="Home"><img src="img/beatbuds.png" alt="logo"></span></a>
+      <div class="nav-right">
+        <a href="newpost.html" id="addPost">New Post</a>
+        <a id="accountButton" onclick="accountDirect()"><img src="img/default_account_logo.png" alt="Login"></a>
+      </div>
+    </nav>
+    <div class="posts">
+      <div class="post">
+        <p class="username">ryo.h</p>
+        <a href="https://www.youtube.com/watch?v=x8VYWazR5mE"><img src="img/racingintothenight_Yoasobi.jpeg" alt="album artwork" class="albumArt"></a>
+        <p>Racing into the night - Yoasobi</p>
+        <div class="reactions">
+          <img src="img/heart.png" alt="like">
+          <a href="comment_viewpost1.html"><img src="img/comment.png" alt="comment"></a>
+          <img src="img/share.png" alt="share">
+        </div>
+      </div>
+      <div class="post">
+        <p class="username">stev.v</p>
+        <a href="https://www.youtube.com/watch?v=lvHZjvIyqsk&pp=ygUGbWFycm9u"><img src="img/Maroon_TaylorSwift.jpeg" alt="album artwork" class="albumArt"></a>
+        <p>Maroon (HSB Music Remix) - Taylor Swift</p>
+        <div class="reactions">
+          <img src="img/heart.png" alt="like">
+          <a href="comment_viewpost2.html"><img src="img/comment.png" alt="comment"></a>
+          <img src="img/share.png" alt="share">
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 BeatBuds.  All rights reserved.</p>
+  </footer>
+</body>
