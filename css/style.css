@@ -358,3 +358,10 @@ label {
   margin: 0;
 }
 
+/* Media queries */
+@media screen and (min-width: 1000px) {
+  .profile-picture {
+    width: 140px;
+    height: 140px;
+  }
+}
