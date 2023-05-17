@@ -1,0 +1,360 @@
+/* base style(type selectors) */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1em;
+}
+
+body {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  margin-top: 100px;
+}
+
+nav {
+  background-color: #B1EDE8;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between
+}
+
+nav img {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav a {
+  display: block;
+  padding: 8px;
+  padding: 14px 16px;
+  color: black;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fffcf9;
+}
+
+h1 {
+  position: relative;
+  left: 1rem;
+  color: ghostwhite;
+  text-shadow: 3px 3px 5px rgba(0, 50, 100, 0.5);
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+  color: ghostwhite;
+}
+
+input {
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: bolder;
+  padding: 10px;
+  background-color: white;
+  width: 100%;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightgrey;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* additional style(class selectors) */
+.posts {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%em;
+  margin: auto;
+}
+
+.post {
+  padding: 4em;
+  border-bottom: 3px;
+  border-color: black;
+  border-bottom-style: solid;
+  margin: auto;
+}
+
+.reactions {
+  display: flex;
+  flex-direction: row;
+}
+
+.reactions img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.albumArt {
+  width: 500px;
+  height: 500px;
+  transition: all 0.3s ease-in-out;
+}
+
+.albumArt:hover {
+  transform: scale(1.05);
+}
+
+.login_body, .login_footer {
+  background: linear-gradient(270deg, #ff6978, #b1ede8);
+  background-size: 600% 600%;
+  animation: gradientBg 20s ease infinite;
+}
+
+.login_footer {
+  width:100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.login_form {
+  position: absolute;
+  top: 40vh;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login_reactive_field {
+  border: 3px solid black;
+  border-radius: 15px;
+}
+
+.login_button {
+  text-decoration: none;
+}
+
+.username {
+  font-weight: bold;
+}
+
+/* Profile page styles */
+#profile_main {
+  margin-top: 100px;
+}
+
+.profile_link {
+  font-weight: bold;
+  color: black;
+}
+
+.profile_link:hover {
+  color: #6D435A;
+}
+
+.profile_body {
+  background-color: #ff6978;
+}
+
+.profile-container {
+  margin-top: 20px;
+}
+
+.profile-picture {
+  width: 130px;
+  height: 130px;
+  border: 5px solid ghostwhite;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.profile-username {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 1px 6px rgba(0, 50, 100, 0.5) ;
+}
+
+.profile-bio {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.profile-favorite-artists, .profile-favorite-genres, .profile-favorite-songs {
+  background-color: #fffcf900;
+  padding: 0;
+}
+
+.profile-favorite-artists li, .profile-favorite-genres li, .profile-favorite-songs li {
+  margin-bottom: 13px;
+  border: 6px solid #fffcf9;
+  background-color: #fffcf9;
+  border-radius: 17px;
+  padding: 7px;
+}
+
+/*new post css*/
+.new_post_form {
+  width: 30%;
+  margin: auto;
+  color: black;
+}
+
+.newpost_heading {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  color: black;
+}
+
+/*login page css*/
+.login_reactive_field .login_button{
+  color: black;
+}
+
+/* Keyframes */
+@keyframes gradientBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*comment_viewpost css*/
+.comment-content {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.comment-music-post {
+  flex: 1;
+  max-width: 600px;
+  margin-right: 20px;
+  padding: 4em;
+  border-bottom: 3px;
+  border-color: black;
+  border-bottom-style: solid;
+}
+
+.comment-albumArt {
+  width: 500px;
+  height: 500px;
+  transition: all 0.3s ease-in-out;
+}
+
+.comment-albumArt:hover {
+  transform: scale(1.05);
+}
+
+.comment-username {
+  font-weight: bold;
+}
+
+.comment-comments-section {
+  flex: 1;
+  max-width: 400px;
+  margin-top: 80px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.comment-input, .comment-textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comment-button {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-button:hover {
+  background-color: #1f776d;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.comment-user {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comment-text {
+  margin: 0;
+}
+
