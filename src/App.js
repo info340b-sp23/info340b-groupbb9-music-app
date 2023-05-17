@@ -1,5 +1,6 @@
 import './index.css';
 import { NavBar } from './Navigation.js';
+import { Posts } from './Posts.js';
 
 export default function App() {
   return (
@@ -8,7 +9,7 @@ export default function App() {
         <NavBar />
       </header>
       <main>
-
+        <Posts />
       </main>
     </body>
   );
