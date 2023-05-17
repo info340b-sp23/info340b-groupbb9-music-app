@@ -11,6 +11,9 @@ export default function App() {
       <main>
         <Posts />
       </main>
+      <footer>
+        <p>&copy; 2023 BeatBuds.  All rights reserved.</p>
+      </footer>
     </body>
   );
 }

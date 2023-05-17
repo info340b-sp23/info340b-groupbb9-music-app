@@ -26,6 +26,7 @@ main {
 nav {
   background-color: #B1EDE8;
   position: fixed;
+  z-index: 2;
   width: 100%;
   top: 0;
   margin-bottom: 20px;
@@ -149,6 +150,8 @@ footer p {
 
 .albumArt:hover {
   transform: scale(1.05);
+  position: relative;
+  z-index: 1;
 }
 
 .login_body, .login_footer {
