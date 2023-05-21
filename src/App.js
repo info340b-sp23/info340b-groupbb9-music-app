@@ -6,7 +6,7 @@ import { UserProfile } from "./ProfilePage";
 export default function App(props) {
   return (
     <div className='container'>
-      <Login />
+      {/* <Login /> */}
       <UserProfile 
         userName="Steven"
         userBio="in my midnight eras~"
@@ -14,7 +14,7 @@ export default function App(props) {
         userAnthem="Maroon"
         favArtist="Taylor Swift"
         favGenre="Pop"
-      />
+      />  
     </div>    
   );
 }
