@@ -362,3 +362,16 @@ label {
   margin: 0;
 }
 
+/* Media queries */
+@media screen and (min-width: 800px) {
+  .profile-picture {
+    width: 140px;
+    height: 140px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+  }
+}
