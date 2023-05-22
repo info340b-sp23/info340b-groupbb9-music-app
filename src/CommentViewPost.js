@@ -1,26 +1,42 @@
-import React, { useState } from 'react';
-import './index.css';
+import React, { useState, useEffect } from 'react';
+import { NavBar } from './Navigation';
 
-const CommentViewPost = () => {
+const EXAMPLE_POSTS = [
+  { id: '1', username: 'ryo.h', songTitle: 'Racing into the night - Yoasobi', albumArt: 'img/racingintothenight_Yoasobi.jpeg', link: 'https://www.youtube.com/watch?v=x8VYWazR5mE', time: '2023-05-15T12:00:0000' },
+  { id: '2', username: 'stev.v', songTitle: 'Maroon (HSB Music Remix) - Taylor Swift', albumArt: 'img/Maroon_TaylorSwift.jpeg', link: 'https://www.youtube.com/watch?v=lvHZjvIyqsk&pp=ygUGbWFycm9u', time: '2023-05-17T12:00:0000' }
+];
+
+const CommentViewPost = ({ postId, setPostId }) => {
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
   const [commentsList, setCommentsList] = useState([]);
+  const [post, setPost] = useState(null);
 
-  const handleSubmit = () => {
-    const newComment = { name, comment };
-    setCommentsList([...commentsList, newComment]);
+  useEffect(() => {
+    // Fetch post details based on id
+    const fetchedPost = EXAMPLE_POSTS.find(post => post.id === postId);
+    setPost(fetchedPost);
+  }, [postId]);
+
+  const handleCommentSubmit = () => {
+    setCommentsList([...commentsList, { name, comment }]);
     setName('');
     setComment('');
   };
 
-  return (
+  return post ? (
+    <div>
+        <header>
+        <NavBar />
+        </header>
     <div className="comment-content">
       <div className="comment-music-post">
-        <p className="comment-username">stev.v</p>
-        <a href="https://www.youtube.com/watch?v=lvHZjvIyqsk&pp=ygUGbWFycm9u">
-          <img src="img/Maroon_TaylorSwift.jpeg" alt="album artwork" className="comment-albumArt" />
+        <p className="comment-username">{post.username}</p>
+        <a href={post.link}>
+          <img src={post.albumArt} alt="album artwork" className="comment-albumArt" />
         </a>
-        <p>Maroon (HSB Music Remix) - Taylor Swift</p>
+        <p>{post.songTitle}</p>
+        <button onClick={() => setPostId(null)}>Back to posts</button>
       </div>
       <div className="comment-comments-section">
         <h3>Comments</h3>
@@ -31,28 +47,22 @@ const CommentViewPost = () => {
             className="comment-input" 
             placeholder="Your Name" 
             value={name}
-            onChange={(e) => setName(e.target.value)} 
+            onChange={(e) => setName(e.target.value)}
           />
           <textarea 
             id="comment" 
             className="comment-textarea" 
             rows="4" 
             cols="50" 
-            placeholder="Write your comment here..." 
+            placeholder="Write your comment here..."
             value={comment}
             onChange={(e) => setComment(e.target.value)}
-          />
-          <button 
-            id="submit" 
-            className="comment-button"
-            onClick={handleSubmit}
-          >
-            Submit
-          </button>
+          ></textarea>
+          <button id="submit" className="comment-button" onClick={handleCommentSubmit}>Submit</button>
         </div>
         <div className="comments-list">
           {commentsList.map((comment, index) => (
-            <div key={index} className="comment">
+            <div className="comment" key={index}>
               <p className="comment-user">{comment.name}</p>
               <p className="comment-text">{comment.comment}</p>
             </div>
@@ -60,7 +70,8 @@ const CommentViewPost = () => {
         </div>
       </div>
     </div>
-  );
+    </div>
+  ) : null; // Render nothing if post not found
 };
 
 export default CommentViewPost;
