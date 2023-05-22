@@ -5,7 +5,7 @@ import { HomePage } from './HomePage.js';
 export default function App(props) {
   return (
     <div>
-        {/* <Login /> */}
+         <Login />
         {/*
         <UserProfile 
           userName="Steven"
@@ -15,7 +15,7 @@ export default function App(props) {
           favArtist="Taylor Swift"
           favGenre="Pop"
         />  */}
-        <HomePage />
+        {/*<HomePage />*/}
     </div>    
   );
 }
