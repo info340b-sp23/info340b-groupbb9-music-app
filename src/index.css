@@ -108,6 +108,7 @@ footer {
   text-align: center;
   margin-bottom: 0;
   margin-top: auto;
+  z-index: 2;
 }
 
 footer p {

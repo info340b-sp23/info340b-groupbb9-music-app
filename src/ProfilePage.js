@@ -1,8 +1,9 @@
 import React from 'react';
 import './index.css';
-import profilePic from '../public/img/taylor_swift_eras_tour_1.jpeg';
 import { NavBar } from "./Navigation";
 import { Footer } from "./Footer";
+
+const profilePic = '../public/img/taylor_swift_eras_tour_1.jpeg';
 export const UserProfile = (props) => {
   return (
     <div className="profile_body">

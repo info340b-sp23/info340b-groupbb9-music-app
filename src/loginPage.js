@@ -15,7 +15,7 @@ export const Login = () => {
             <label htmlFor="password">Password:</label>
             <input className="login_reactive_field" type="password" id="password" name="password" />
 
-            <button type="button" className="login_reactive_field" id="loginButton" onClick={login}>Login</button>
+            <button type="button" className="login_reactive_field" id="loginButton" onClick={Login}>Login</button>
           </form>
           <Footer />
         </div>
