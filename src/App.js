@@ -1,7 +1,7 @@
 import './index.css';
 import { Login } from './loginPage.js'
 import { UserProfile } from './ProfilePage';
-import { HomePage } from './HomePage.js';
+import HomePage from './HomePage.js';
 import CommentViewPost from './CommentViewPost.js';
 
 export default function App(props) {
@@ -17,8 +17,8 @@ export default function App(props) {
           favArtist="Taylor Swift"
           favGenre="Pop"
         /> */}
-        <HomePage />
-        {/*<CommentViewPost postId={1} setPostId={setSelectedPostId} />*/}
+        {/*<HomePage />*/}
+        <CommentViewPost postId={2} /*setPostId={setSelectedPostId*/ />
     </div>    
   );
 }

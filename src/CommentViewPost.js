@@ -4,15 +4,15 @@ import { NavBar } from "./Navigation";
 import { Footer } from "./Footer";
 
 const EXAMPLE_POSTS = [
-  { id: '1', username: 'ryo.h', songTitle: 'Racing into the night - Yoasobi', albumArt: 'img/racingintothenight_Yoasobi.jpeg', link: 'https://www.youtube.com/watch?v=x8VYWazR5mE', time: '2023-05-15T12:00:00Z' },
-  { id: '2', username: 'stev.v', songTitle: 'Maroon (HSB Music Remix) - Taylor Swift', albumArt: 'img/Maroon_TaylorSwift.jpeg', link: 'https://www.youtube.com/watch?v=lvHZjvIyqsk&pp=ygUGbWFycm9u', time: '2023-05-17T12:00:00Z' }
+  { id: 1, username: 'ryo.h', songTitle: 'Racing into the night - Yoasobi', albumArt: 'img/racingintothenight_Yoasobi.jpeg', link: 'https://www.youtube.com/watch?v=x8VYWazR5mE', time: '2023-05-15T12:00:00Z' },
+  { id: 2, username: 'stev.v', songTitle: 'Maroon (HSB Music Remix) - Taylor Swift', albumArt: 'img/Maroon_TaylorSwift.jpeg', link: 'https://www.youtube.com/watch?v=lvHZjvIyqsk&pp=ygUGbWFycm9u', time: '2023-05-17T12:00:00Z' }
 ];
 
-function CommentViewPost({ postId, setPostId }) {
+function CommentViewPost({ postId/*, setPostId */}) {
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
   const [commentsList, setCommentsList] = useState([]);
-  const [post, setPost] = useState(null);
+  const [post, setPost] = useState(EXAMPLE_POSTS[1]);
 
   useEffect(() => {
     // Fetch post details based on id
@@ -26,7 +26,7 @@ function CommentViewPost({ postId, setPostId }) {
     setComment('');
   };
 
-  return post ? (
+  return (
     <div>
       <header>
         <NavBar />
@@ -38,7 +38,7 @@ function CommentViewPost({ postId, setPostId }) {
             <img src={post.albumArt} alt="album artwork" className="comment-albumArt" />
           </a>
           <p>{post.songTitle}</p>
-          <button onClick={() => setPostId(null)}>Back to posts</button>
+          <button /*onClick={() => setPostId(null)}*/>Back to posts</button>
         </div>
         <div className="comment-comments-section">
           <h3>Comments</h3>
@@ -72,9 +72,9 @@ function CommentViewPost({ postId, setPostId }) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
-  ) : null; // Render nothing if post not found
+  )
 };
 
 export default CommentViewPost; 
-            <button id="submit" className="comment-button"
