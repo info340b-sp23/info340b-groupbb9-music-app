@@ -1,7 +1,7 @@
 import React from "react";
 
-function Post({ post }) {
-  const {username, songTitle, albumArt, link} = post
+function Post({ post, setPostId }) {
+  const {username, songTitle, albumArt, link, id} = post;
   return (
     <div className='post'>
       <p clasName="username">{username}</p>
@@ -9,9 +9,11 @@ function Post({ post }) {
         <p>{songTitle}</p>
         <div class="reactions">
           <img src="img/heart.png" alt="like"></img>
-          <a href="comment_viewpost1.html"><img src="img/comment.png" alt="comment"></img></a>
+          <button onClick={() => setPostId(id)}><img src="img/comment.png" alt="comment"></img></button>
           <img src="img/share.png" alt="share"></img>
         </div>
     </div>
   );
 }
+
+export default Post;

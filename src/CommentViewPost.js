@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { NavBar } from './Navigation';
+import './index.css';
+import { NavBar } from "./Navigation";
+import { Footer } from "./Footer";
 
 const EXAMPLE_POSTS = [
   { id: '1', username: 'ryo.h', songTitle: 'Racing into the night - Yoasobi', albumArt: 'img/racingintothenight_Yoasobi.jpeg', link: 'https://www.youtube.com/watch?v=x8VYWazR5mE', time: '2023-05-15T12:00:0000' },
@@ -27,7 +29,7 @@ export default function CommentViewPost({ postId, setPostId }) {
   return post ? (
     <div>
       <header>
-      <NavBar />
+        <NavBar />
       </header>
       <div className="comment-content">
         <div className="comment-music-post">
