@@ -3,7 +3,6 @@ import './index.css';
 import { NavBar } from "./Navigation";
 import { Footer } from "./Footer";
 
-const profilePic = '../public/img/taylor_swift_eras_tour_1.jpeg';
 export const UserProfile = (props) => {
   return (
     <div className="profile_body">
@@ -13,7 +12,7 @@ export const UserProfile = (props) => {
       <div id="profile_main" className="container profile-container"> 
         <div className="row">
           <div className="col-lg-4">
-            <img src={profilePic} alt="user profile picture" className="profile-picture" />
+            <img src={props.profilePic} alt="user profile picture" className="profile-picture" />
             <h2 className="profile-username">{props.userName}</h2>
             <p className="profile-bio">Bio: {props.userBio}</p>
           </div>
