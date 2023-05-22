@@ -17,8 +17,8 @@ export default function App(props) {
           favArtist="Taylor Swift"
           favGenre="Pop"
         /> */}
-        {/*<HomePage />*/}
-        <CommentViewPost />
+        <HomePage />
+        {/*<CommentViewPost postId={1} setPostId={setSelectedPostId} />*/}
     </div>    
   );
 }

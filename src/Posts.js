@@ -1,6 +1,5 @@
 import React, { UseState } from "react";
 import _ from 'lodash';
-import Post from './Post.js';
 
 const EXAMPLE_POSTS = [
   { id: '1', username: 'ryo.h', songTitle: 'Racing into the night - Yoasobi', albumArt: 'img/racingintothenight_Yoasobi.jpeg', link: 'https://www.youtube.com/watch?v=x8VYWazR5mE', time: '2023-05-15T12:00:0000' },

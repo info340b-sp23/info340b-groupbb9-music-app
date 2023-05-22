@@ -8,7 +8,7 @@ const EXAMPLE_POSTS = [
   { id: '2', username: 'stev.v', songTitle: 'Maroon (HSB Music Remix) - Taylor Swift', albumArt: 'img/Maroon_TaylorSwift.jpeg', link: 'https://www.youtube.com/watch?v=lvHZjvIyqsk&pp=ygUGbWFycm9u', time: '2023-05-17T12:00:0000' }
 ];
 
-export default function CommentViewPost({ postId, setPostId }) {
+function CommentViewPost({ postId, setPostId }) {
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
   const [commentsList, setCommentsList] = useState([]);
@@ -75,3 +75,5 @@ export default function CommentViewPost({ postId, setPostId }) {
     </div>
   ) : null; // Render nothing if post not found
 };
+
+export default CommentViewPost;
