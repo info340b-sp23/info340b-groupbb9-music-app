@@ -2,15 +2,22 @@ import React from "react";
 import { NavBar } from './Navigation.js';
 import { Posts } from './Posts.js';
 import { Footer } from './Footer.js';
+import CommentViewPost from './CommentViewPost.js';
 
 export function HomePage() {
-  return(
+  const [selectedPostId, setSelectedPostId] = useState(null);
+
+  return (
     <div>
       <header>
         <NavBar />
       </header>
       <main> 
-        <Posts />
+      {selectedPostId ? (
+          <CommentViewPost postId={selectedPostId} setPostId={setSelectedPostId} />
+        ) : (
+          <Posts setPostId={setSelectedPostId} />
+        )}
       </main>
       <Footer />
     </div>
