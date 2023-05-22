@@ -3,7 +3,7 @@ import './index.css';
 import { NavBar } from "./Navigation";
 import { Footer } from "./Footer";
 
-export const UserProfile = (props) => {
+export function UserProfile(props) {
   return (
     <div className="profile_body">
       <header className="profile_header">

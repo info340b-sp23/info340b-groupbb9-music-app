@@ -9,7 +9,7 @@ const EXAMPLE_POSTS = [
 /*Takes in a post object with post id, username, song title, album art source, 
   a link to the song on youtube, and the time of posting */
 function Post({ post, setPostId }) {
-  const {username, songTitle, albumArt, link, id} = post
+  const {id, username, songTitle, albumArt, link} = post
   return (
     <div className='post'>
       <p clasName="username">{username}</p>

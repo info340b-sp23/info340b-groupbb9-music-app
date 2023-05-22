@@ -7,7 +7,7 @@ import CommentViewPost from './CommentViewPost.js';
 export default function App(props) {
   return (
     <div>
-        {/*<Login /> */}
+        {/*<Login />*/}
         {/*<UserProfile
           profilePic="../public/img/taylor_swift_eras_tour_1.jpeg" 
           userName="Steven"
@@ -16,9 +16,9 @@ export default function App(props) {
           userAnthem="Maroon"
           favArtist="Taylor Swift"
           favGenre="Pop"
-        /> */}
-        {/*<HomePage />*/}
-        <CommentViewPost postId={2} /*setPostId={setSelectedPostId*/ />
+        />*/}
+        <HomePage />
+        {/*<CommentViewPost postId={2} /> */}
     </div>    
   );
 }

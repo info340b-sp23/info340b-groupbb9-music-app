@@ -5,7 +5,7 @@ import { Footer } from './Footer.js';
 import CommentViewPost from './CommentViewPost.js';
 
 export default function HomePage() {
-  const [selectedPostId, setSelectedPostId] = UseState(null);
+  //const [selectedPostId, setSelectedPostId] = UseState(null);
 
   return (
     <div>
@@ -13,10 +13,9 @@ export default function HomePage() {
         <NavBar />
       </header>
       <main> 
-        <Posts setPostId={setSelectedPostId} />
+        <Posts /*setPostId={setSelectedPostId} *//>
       </main>
       <Footer />
-    </div>
-    
+    </div>  
   );
 }
