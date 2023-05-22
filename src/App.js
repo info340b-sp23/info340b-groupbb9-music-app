@@ -2,11 +2,12 @@ import './index.css';
 import { Login } from './loginPage.js'
 import { UserProfile } from './ProfilePage';
 import { HomePage } from './HomePage.js';
+import CommentViewPost from './CommentViewPost.js';
 export default function App(props) {
   return (
     <div>
-        {/* <Login /> */}
-        <UserProfile
+        {/*<Login /> */}
+        {/*<UserProfile
           profilePic="../public/img/taylor_swift_eras_tour_1.jpeg" 
           userName="Steven"
           userBio="in my midnight eras~"
@@ -14,8 +15,9 @@ export default function App(props) {
           userAnthem="Maroon"
           favArtist="Taylor Swift"
           favGenre="Pop"
-        /> 
+        /> */}
         {/*<HomePage />*/}
+        <CommentViewPost />
     </div>    
   );
 }
