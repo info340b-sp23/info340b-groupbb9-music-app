@@ -60,4 +60,21 @@ function CommentViewPost({ postId, setPostId }) {
               value={comment}
               onChange={(e) => setComment(e.target.value)}
             ></textarea>
+         <button id="submit" className="comment-button" onClick={handleCommentSubmit}>Submit</button>
+          </div>
+          <div className="comments-list">
+            {commentsList.map((comment, index) => (
+              <div className="comment" key={index}>
+                <p className="comment-user">{comment.name}</p>
+                <p className="comment-text">{comment.comment}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : null; // Render nothing if post not found
+};
+
+export default CommentViewPost; 
             <button id="submit" className="comment-button"
