@@ -9,7 +9,6 @@ function Post({ post, setPostId }) {
         <p>{songTitle}</p>
         <div class="reactions">
           <img src="img/heart.png" alt="like"></img>
-          <button onClick={() => setPostId(id)}><img src="img/comment.png" alt="comment"></img></button>
           <img src="img/share.png" alt="share"></img>
         </div>
     </div>

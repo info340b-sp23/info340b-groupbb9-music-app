@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 import { Footer } from "./Footer";
-export const Login = () => {
+export function Login() {
   return (
     <main>
         <div className="container">

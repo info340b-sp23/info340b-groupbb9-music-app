@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Footer = () => {
+export function Footer() {
     return (
         <footer className="login_footer">
           <p>&copy; 2023 BeatBuds. All rights reserved.</p>
