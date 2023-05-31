@@ -3,6 +3,7 @@ import { Login } from './loginPage.js'
 import { UserProfile } from './ProfilePage';
 import HomePage from './HomePage.js';
 import CommentViewPost from './CommentViewPost.js';
+import NewPost from './newpost.js';
 import { Routes, Route, Navigate, Link } from 'react-router-dom';
 
 export default function App(props) {
@@ -20,6 +21,7 @@ export default function App(props) {
           favArtist="Taylor Swift"
           favGenre="Pop"  />} />
         <Route path="/comment" element={<CommentViewPost postId={2} />} />
+        <Route path="/newPost" element={<NewPost />} />
         <Route path="*" element={<Navigate to="/home"/>} />
       </Routes>
     </div>    
