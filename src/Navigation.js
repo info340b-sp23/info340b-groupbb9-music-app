@@ -8,7 +8,7 @@ export function NavBar() {
       <a href="index.html"></a>
       <div className="nav-right">
         <NavLink to="/newPost">New Post</NavLink>
-        <NavLink to="/profile"><img src="img/default_account_logo.png" alt="Login"></img></NavLink>{/*<a id="accountButton" onclick="accountDirect()"></a>*/}
+        <NavLink to="/profile"><img src="img/default_account_logo.png" alt="Login"></img></NavLink>
       </div>
     </nav>
   );

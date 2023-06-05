@@ -8,8 +8,8 @@ const EXAMPLE_POSTS = [
 
 /*Takes in a post object with post id, username, song title, album art source, 
   a link to the song on youtube, and the time of posting */
-function Post({ post, setPostId }) {
-  const {id, username, songTitle, albumArt, link} = post
+function Post({ post/*, setPostId */}) {
+  const { username, songTitle, albumArt, link} = post
   return (
     <div className='post'>
       <p clasName="username">{username}</p>
@@ -17,7 +17,6 @@ function Post({ post, setPostId }) {
         <p>{songTitle}</p>
         <div class="reactions">
           <img src="img/heart.png" alt="like"></img>
-          <img src="img/comment.png" alt="comment" onClick={() => setPostId(id)}></img>
           <img src="img/share.png" alt="share"></img>
         </div>
     </div>
@@ -25,10 +24,10 @@ function Post({ post, setPostId }) {
 }
 
 /* Takes in an array of post objects */
-export function Posts({ setPostId }) {
+export function Posts() {
   const orderedPosts = _.reverse(_.sortBy(EXAMPLE_POSTS, EXAMPLE_POSTS.time));
   const posts = orderedPosts.map((post) => {
-    return <Post key={post.id} post={post} setPostId={setPostId} />
+    return <Post post={post} />
   });
   return (
     <div className='posts'>
