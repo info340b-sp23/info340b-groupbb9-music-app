@@ -10,13 +10,16 @@ const EXAMPLE_POSTS = [
   a link to the song on youtube, and the time of posting */
 function Post({ post/*, setPostId */}) {
   const { username, songTitle, albumArt, link} = post
+  const [likes, setLikes] = useState(0);
   return (
     <div className='post'>
       <p clasName="username">{username}</p>
         <a href={link}><img src={albumArt} alt="album artwork" class="albumArt"></img></a>
         <p>{songTitle}</p>
         <div class="reactions">
-          <img src="img/heart.png" alt="like"></img>
+          <button onClick={() => setLikes(likes + 1)}>
+            {likes} Likes
+          </button>
           <img src="img/share.png" alt="share"></img>
         </div>
     </div>
