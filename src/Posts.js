@@ -11,13 +11,20 @@ const EXAMPLE_POSTS = [
 function Post({ post/*, setPostId */}) {
   const { username, songTitle, albumArt, link} = post
   const [likes, setLikes] = useState(0);
+  const [liked, setLiked] = useState(false);
   return (
     <div className='post'>
       <p clasName="username">{username}</p>
         <a href={link}><img src={albumArt} alt="album artwork" class="albumArt"></img></a>
         <p>{songTitle}</p>
         <div class="reactions">
-          <button onClick={() => setLikes(likes + 1)}>
+          <button 
+            className={'like-button ${liked ? 'liked' : ''}'}
+            onClick={() => {
+              setLikes(likes + 1)};
+              setLiked(true);
+            }}
+          >
             {likes} Likes
           </button>
           <img src="img/share.png" alt="share"></img>
