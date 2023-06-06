@@ -16,10 +16,10 @@ export function UserProfile(props) {
     setEditMode(!editMode);
   };
 
-  // const handleSave = () => {
-  //   // Here you would typically update the user's data in your back end
-  //   setEditMode(false);
-  // };
+  const handleSave = () => {
+    // Here you would typically update the user's data in your back end
+    setEditMode(false);
+  };
 
   return (
     <div className="profile_body">

@@ -1,4 +1,4 @@
-import React, { UseState } from "react";
+import React, { useState } from "react";
 import _ from 'lodash';
 
 const EXAMPLE_POSTS = [
