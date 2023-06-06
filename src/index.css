@@ -29,7 +29,6 @@ nav {
   z-index: 2;
   width: 100%;
   top: 0;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -41,6 +40,19 @@ nav img {
   height: 50px;
   padding: 0;
   margin: 0;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nav-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .nav-right {
@@ -93,12 +105,21 @@ button {
   font-weight: bolder;
   padding: 10px;
   background-color: white;
-  width: 100%;
   cursor: pointer;
 }
 
 button:hover {
   background-color: lightgrey;
+}
+
+.edit-button, .save-button{
+  width: 100%;
+  border: solid;
+}
+
+.like-button-, .like-button-liked {
+  padding: 5px;
+  border: none;
 }
 
 footer {
@@ -125,7 +146,7 @@ footer p {
 }
 
 .post {
-  padding: 4em;
+  padding: 0 4em 4em 4em;
   border-bottom: 3px;
   border-color: black;
   border-bottom-style: solid;
@@ -138,9 +159,15 @@ footer p {
 }
 
 .reactions img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  padding: .1em;
+  justify-content: center;
+  height: 100%;
+}
+
+.reactions img:hover {
+  background-color: lightgrey;
 }
 
 .albumArt {
@@ -360,6 +387,13 @@ label {
 
 .comment-text {
   margin: 0;
+}
+
+.header-title {
+  text-align: center;
+  color: black;
+  margin: 0;
+  padding: 0;
 }
 
 /* Media queries */

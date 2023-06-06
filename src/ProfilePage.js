@@ -41,10 +41,10 @@ export function UserProfile(props) {
                 : userBio }
             </p>
             {editMode 
-              ? <button onClick={handleSave}>Save</button>
-              : <button onClick={handleEdit}>Edit</button>}
+              ? <button className='edit-button' onClick={handleSave}>Save</button>
+              : <button className='save-button'onClick={handleEdit}>Edit</button>}
           </div>
-          <div className="col-lg-8">
+          <div className="col-lg-4">
             <h2>Anthem 🎧</h2>
             <ul className="profile-favorite-songs">
               <li>
