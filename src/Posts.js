@@ -19,9 +19,9 @@ function Post({ post/*, setPostId */}) {
         <p>{songTitle}</p>
         <div class="reactions">
           <button 
-            className={'like-button ${liked ? 'liked' : ''}'}
+            className={`like-button ${liked ? 'liked' : ''}`}
             onClick={() => {
-              setLikes(likes + 1)};
+              setLikes(likes + 1);
               setLiked(true);
             }}
           >
@@ -30,7 +30,7 @@ function Post({ post/*, setPostId */}) {
           <img src="img/share.png" alt="share"></img>
         </div>
     </div>
-  );
+  )
 }
 
 /* Takes in an array of post objects */
