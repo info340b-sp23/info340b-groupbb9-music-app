@@ -38,7 +38,7 @@ function Post({ post }) {
               url={link}
               quote={songTitle}
             >
-              <FacebookIcon size={21} round />
+              <FacebookIcon size={32} round />
             </FacebookShareButton>
           </div>
           <div className="share-button">
@@ -46,7 +46,7 @@ function Post({ post }) {
               url={link}
               quote={songTitle}
             >
-              <TwitterIcon size={21} round />
+              <TwitterIcon size={32} round />
             </TwitterShareButton>
           </div>
         </div>

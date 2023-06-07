@@ -222,8 +222,23 @@ footer p {
 
 .profile-container {
   margin-top: 20px;
+  display: flex;
 }
 
+  .profile-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
 .profile-picture {
   width: 130px;
   height: 130px;
@@ -293,10 +308,6 @@ label {
 
 /* Media queries */
 @media screen (max-width: 768px) {
-  .profile-picture {
-    width: 140px;
-    height: 140px;
-  }
   .like-button-container {
     flex-direction: column;
   }
