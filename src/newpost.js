@@ -78,7 +78,7 @@ export default function NewPost({ username }) {
   };
 
   return (
-  <div>
+  <div className="container">
     <header>
       <title>BeatBuds - New Post</title>
       <link rel="stylesheet" href="css/style.css" />
@@ -122,5 +122,6 @@ export default function NewPost({ username }) {
     </main>
   </div>
 );
+
 
 }
