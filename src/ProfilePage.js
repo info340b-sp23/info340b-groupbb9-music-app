@@ -28,13 +28,15 @@ export function UserProfile(props) {
       </header>
       <div id="profile_main" className="container profile-container"> 
         <div className="row">
-          <div /*className="col-lg-4"*/>
-            <img src={props.profilePic} alt="user profile picture" className="profile-picture" />
+          <div className="profile-left">
+            <img src={https://beat-buds-cc1b1.firebaseapp.com/img/beatbuds.png} alt="user profile picture" className="profile-picture" />
             <h2 className="profile-username">
               {editMode 
                 ? <input type="text" value={userName} onChange={e => setUserName(e.target.value)} />
                 : userName }
             </h2>
+          </div>
+          <div className="profile_right">
             <p className="profile-bio">
               Bio: {editMode 
                 ? <textarea value={userBio} onChange={e => setUserBio(e.target.value)} />
@@ -43,8 +45,7 @@ export function UserProfile(props) {
             {editMode 
               ? <button onClick={handleSave}>Save</button>
               : <button onClick={handleEdit}>Edit</button>}
-          </div>
-          <div /*className="col-lg-8"*/>
+             
             <h2>Anthem 🎧</h2>
             <ul className="profile-favorite-songs">
               <li>

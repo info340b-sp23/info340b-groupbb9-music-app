@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { getDatabase, ref, set, onValue, push } from 'firebase/database';
 
-function NewPost() {
+function NewPost({ username }) {
   const [title, setTitle] = useState('');
   const [artist, setArtist] = useState('');
   const [url, setUrl] = useState('');
