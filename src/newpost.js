@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function NewPost() {
+function NewPost({ username }) {
   const [title, setTitle] = useState('');
   const [artist, setArtist] = useState('');
   const [url, setUrl] = useState('');
