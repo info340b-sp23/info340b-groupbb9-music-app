@@ -36,8 +36,13 @@ function NewPost() {
 
   const extractVideoId = (url) => {
     const match = url.match(/youtube\.com\/watch\?v=([^\&\?\/]+)/);
-    return match && match[1];
+    if (match && match[1]) {
+      return match[1];
+    } else {
+      return null;
+    }
   };
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
