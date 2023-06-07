@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 import { NavBar } from "./Navigation";
 import { Footer } from "./Footer";
+import { db } from './firebase';
 
 export function UserProfile(props) {
   const [editMode, setEditMode] = useState(false);
@@ -16,10 +17,20 @@ export function UserProfile(props) {
     setEditMode(!editMode);
   };
 
-  const handleSave = () => {
-    // Here you would typically update the user's data in your back end
+  const handleSave = async () => {
+    await updateUserOnServer(userId, { userName, userBio, userAnthem, userAnthemURL, favArtist, favGenre });
     setEditMode(false);
-  };
+};
+
+  const updateUserOnServer = async (userId, updatedUser) => {
+    try {
+        const userRef = db.collection('users').doc(userId);
+        const result = await userRef.update(updatedUser);
+        return result;
+    } catch (error) {
+        console.error('Error updating user: ', error);
+    }
+};
 
   return (
     <div className="profile_body">
