@@ -2,7 +2,6 @@ import './index.css';
 import { Login } from './loginPage.js'
 import { UserProfile } from './ProfilePage';
 import HomePage from './HomePage.js';
-import CommentViewPost from './CommentViewPost.js';
 import NewPost from './newpost.js';
 import { Routes, Route, Navigate, Link } from 'react-router-dom';
 
