@@ -41,15 +41,15 @@ export function UserProfile(props) {
                 : userBio }
             </p>
             {editMode 
-              ? <button className='edit-button' onClick={handleSave}>Save</button>
-              : <button className='save-button'onClick={handleEdit}>Edit</button>}
+              ? <button onClick={handleSave}>Save</button>
+              : <button onClick={handleEdit}>Edit</button>}
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-8">
             <h2>Anthem 🎧</h2>
             <ul className="profile-favorite-songs">
               <li>
                 {editMode
-                  ? <input type="text" value={userAnthem} onChange={e => setUserAnthem(e.target.value)} />
+                  ? <><input type="text" placeholder="Anthem name" value={userAnthem} onChange={e => setUserAnthem(e.target.value)} /><input type="text" placeholder="Anthem URL" value={userAnthemURL} onChange={e => setUserAnthemURL(e.target.value)} /></>
                   : <a href={userAnthemURL} target="_blank" rel="noopener noreferrer" className="profile_link">{userAnthem}</a> }
               </li>
             </ul>
