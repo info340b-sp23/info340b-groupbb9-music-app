@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { getDatabase, ref, set, onValue, push } from 'firebase/database';
 import { NavBar } from './Navigation.js';
+import { FacebookShareButton, TwitterShareButton} from 'react-share';
+import { FacebookIcon, TwitterIcon} from 'react-share';
+import { getDatabase, ref, onValue } from 'firebase/database';
+
 
 export default function NewPost({ username }) {
   const [title, setTitle] = useState('');
