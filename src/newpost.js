@@ -5,6 +5,7 @@ function NewPost() {
   const [artist, setArtist] = useState('');
   const [url, setUrl] = useState('');
   const [thumbnail, setThumbnail] = useState('');
+  const [error, setError] = useState('');
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -12,6 +13,10 @@ function NewPost() {
       const videoId = extractVideoId(value);
       if (videoId) {
         setThumbnail(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`);
+        setError('');
+      } else {
+        setThumbnail('');
+        setError('Invalid YouTube URL');
       }
     }
     switch (name) {
@@ -37,7 +42,7 @@ function NewPost() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Form submitted!');
-    // Add your form submission logic here
+    // Add form submission logic here
   };
 
   return (
@@ -92,12 +97,12 @@ function NewPost() {
         />
         <br />
 
+        {error && <p className="error">{error}</p>}
+
         <img src={thumbnail} alt="thumbnail" />
-        //logic
         <br />
 
         <input type="submit" value="Submit" />
-        //logic here
       </form>
     </div>
   );
