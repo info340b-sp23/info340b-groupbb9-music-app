@@ -293,10 +293,6 @@ label {
 
 /* Media queries */
 @media screen (max-width: 768px) {
-  .profile-picture {
-    width: 140px;
-    height: 140px;
-  }
   .like-button-container {
     flex-direction: column;
   }
