@@ -20,7 +20,7 @@ function Post({ post/*, setPostId */}) {
         <a href={link}><img src={albumArt} alt="album artwork" class="albumArt"></img></a>
         <p>{songTitle}</p>
         <div class="reactions">
-          <div class="like-button">
+          <div class="like-button-container">
           <button 
             className={`like-button ${liked ? 'liked' : ''}`}
             onClick={() => {
