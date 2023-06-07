@@ -16,11 +16,11 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin-top: 60px; /* Add margin to leave space for the navigation bar */
 }
 
 main {
   width: 100%;
-  margin-top: 100px;
 }
 
 nav {
@@ -32,7 +32,7 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 nav img {
@@ -112,28 +112,16 @@ button:hover {
   background-color: lightgrey;
 }
 
-.edit-button, .save-button{
+.edit-button,
+.save-button {
   width: 100%;
   border: solid;
 }
 
-.like-button-, .like-button-liked {
+.like-button-,
+.like-button-liked {
   padding: 5px;
   border: none;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 0;
-  margin-top: auto;
-  z-index: 2;
-}
-
-footer p {
-  margin: 0;
 }
 
 /* additional style(class selectors) */
@@ -176,7 +164,8 @@ footer p {
   z-index: 1;
 }
 
-.login_body, .login_footer{
+.login_body,
+.login_footer {
   background: linear-gradient(270deg, #ff6978, #b1ede8);
   background-size: 600% 600%;
   animation: gradientBg 20s ease infinite;
@@ -200,7 +189,7 @@ footer p {
 }
 
 .login_footer {
-  width:100%;
+  width: 100%;
   position: fixed;
   bottom: 0;
 }
@@ -268,7 +257,7 @@ footer p {
 .profile-username {
   font-size: 3rem;
   margin-bottom: 10px;
-  text-shadow: 2px 1px 6px rgba(0, 50, 100, 0.5) ;
+  text-shadow: 2px 1px 6px rgba(0, 50, 100, 0.5);
 }
 
 .profile-bio {
@@ -276,12 +265,16 @@ footer p {
   margin-bottom: 20px;
 }
 
-.profile-favorite-artists, .profile-favorite-genres, .profile-favorite-songs {
+.profile-favorite-artists,
+.profile-favorite-genres,
+.profile-favorite-songs {
   background-color: #fffcf900;
   padding: 0;
 }
 
-.profile-favorite-artists li, .profile-favorite-genres li, .profile-favorite-songs li {
+.profile-favorite-artists li,
+.profile-favorite-genres li,
+.profile-favorite-songs li {
   margin-bottom: 13px;
   border: 6px solid #fffcf9;
   background-color: #fffcf9;
@@ -307,7 +300,7 @@ label {
 }
 
 /*login page css*/
-.login_reactive_field .login_button{
+.login_reactive_field .login_button {
   color: black;
 }
 
@@ -367,7 +360,8 @@ label {
   margin-bottom: 20px;
 }
 
-.comment-input, .comment-textarea {
+.comment-input,
+.comment-textarea {
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -416,6 +410,7 @@ label {
     height: 140px;
   }
 }
+
 @media screen and (min-width: 900px) {
   .profile-picture {
     width: 150px;
