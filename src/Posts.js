@@ -1,7 +1,7 @@
-import React, { UseState } from "react";
+import React, { useState } from "react";
 import _ from 'lodash';
-import { FacebookShareButton, TwitterShareButton, FacebookMessengerShareButton } from 'react-share';
-import { FacebookIcon, TwitterIcon, FacebookMessengerIcon } from 'react-share';
+import { FacebookShareButton, TwitterShareButton} from 'react-share';
+import { FacebookIcon, TwitterIcon} from 'react-share';
 
 const EXAMPLE_POSTS = [
   { id: '1', username: 'ryo.h', songTitle: 'Racing into the night - Yoasobi', albumArt: 'img/racingintothenight_Yoasobi.jpeg', link: 'https://www.youtube.com/watch?v=x8VYWazR5mE', time: '2023-05-15T12:00:0000' },
@@ -37,12 +37,6 @@ function Post({ post/*, setPostId */}) {
           >
             <FacebookIcon size={21} round />
           </FacebookShareButton>
-          <FacebookMessengerShareButton
-            url={link}
-            appId="521270401588372"
-          >
-            <FacebookMessengerIcon size={21} round />
-          </FacebookMessengerShareButton>
           <TwitterShareButton
             url={link}
             quote={songTitle}

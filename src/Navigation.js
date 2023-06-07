@@ -9,7 +9,8 @@ export function NavBar() {
         <a href="index.html"></a>
       </div>
       <div className='nav-center'>
-        <h1 className='header-title'>BEATBUDS</h1>
+        <span aria-label="Home"><NavLink to="/home"><h1 className='header-title'>BEATBUDS</h1></NavLink></span>
+
       </div>
       <div className="nav-right">
         <NavLink to="/newPost">New Post</NavLink>

@@ -19,7 +19,7 @@ export default function App(props) {
           userAnthem="Maroon"
           favArtist="Taylor Swift"
           favGenre="Pop"  />} />
-        <Route path="/comment" element={<CommentViewPost postId={2} />} />
+        {/*<Route path="/comment" element={<CommentViewPost postId={2} />} />*/}
         <Route path="/newPost" element={<NewPost />} />
         <Route path="*" element={<Navigate to="/home"/>} />
       </Routes>
