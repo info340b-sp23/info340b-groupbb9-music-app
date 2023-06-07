@@ -1,21 +1,38 @@
 import './index.css';
-import { Login } from './loginPage.js'
+import { Login } from './loginPage.js';
+import { Register } from './Register.js';
 import { UserProfile } from './ProfilePage';
-import { HomePage } from './HomePage.js';
+import HomePage from './HomePage.js';
+import NewPost from './newpost.js';
+import { Routes, Route, Navigate, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+
 export default function App(props) {
+  const [currentForm, setCurrentForm] = useState('login');
+
+  const toggleForm = (formName) => {
+    setCurrentForm(formName);
+  }
+
   return (
     <div>
-        {/* <Login /> */}
-        <UserProfile
+      <Routes>
+        <Route path="/login" element={<Login onFormSwitch={toggleForm} />} />
+        <Route path="/register" element={<Register onFormSwitch={toggleForm}/>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/profile" element={<UserProfile 
           profilePic="../public/img/taylor_swift_eras_tour_1.jpeg" 
           userName="Steven"
           userBio="in my midnight eras~"
           userAnthemURL="https://www.youtube.com/watch?v=lvHZjvIyqsk"
           userAnthem="Maroon"
           favArtist="Taylor Swift"
-          favGenre="Pop"
-        /> 
-        {/*<HomePage />*/}
+          favGenre="Pop"  />} />
+        {/*<Route path="/comment" element={<CommentViewPost postId={2} />} /> */}
+        <Route path="/newPost" element={<NewPost />} />
+        <Route path="*" element={<Navigate to="/home"/>} />
+      </Routes>
     </div>    
   );
 }
