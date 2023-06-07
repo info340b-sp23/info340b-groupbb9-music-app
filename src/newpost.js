@@ -93,9 +93,11 @@ function NewPost() {
         <br />
 
         <img src={thumbnail} alt="thumbnail" />
+        //logic
         <br />
 
         <input type="submit" value="Submit" />
+        //logic here
       </form>
     </div>
   );
