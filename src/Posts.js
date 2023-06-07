@@ -20,6 +20,7 @@ function Post({ post/*, setPostId */}) {
         <a href={link}><img src={albumArt} alt="album artwork" class="albumArt"></img></a>
         <p>{songTitle}</p>
         <div class="reactions">
+          <div class="like-button">
           <button 
             className={`like-button ${liked ? 'liked' : ''}`}
             onClick={() => {
@@ -29,6 +30,7 @@ function Post({ post/*, setPostId */}) {
           >
             {likes} Likes
           </button>
+          </div>
           <FacebookShareButton
             url={link}
             quote={songTitle}
