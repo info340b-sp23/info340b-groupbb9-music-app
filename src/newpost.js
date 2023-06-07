@@ -78,66 +78,49 @@ export default function NewPost({ username }) {
   };
 
   return (
-    <div>
-      <NavBar />
+  <div>
+    <header>
+      <title>BeatBuds - New Post</title>
+      <link rel="stylesheet" href="css/style.css" />
+      <meta name="author" content="Miles Lang" />
+      <meta
+        name="description"
+        content="This website offers a way for friends to share their favorite music with each other and allows them to like, comment, and listen to their friends' posts."
+      />
+      <link rel="icon" type="image/png" href="img/beatbuds.png" />
+      <script type="text/javascript" src="helper.js"></script>
+    </header>
+    <main>
+      <nav>
+        <a href="index.html">
+          <span aria-label="Home">
+            <img src="img/beatbuds.png" alt="logo" />
+          </span>
+        </a>
+        <div className="nav-right">
+          <a href="newpost.html" id="addPost">
+            New Post
+          </a>
+          <a id="accountButton" onClick={accountDirect}>
+            <img src="img/default_account_logo.png" alt="Login" />
+          </a>
+        </div>
+      </nav>
       <h1 className="newpost_heading">Add New Post</h1>
       <form className="new_post_form" onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          value={title}
-          onChange={handleChange}
-          required
-        />
-        <br />
+        <input type="text" id="title" name="title" required /><br />
 
         <label htmlFor="artist">Artist:</label>
-        <input
-          type="text"
-          id="artist"
-          name="artist"
-          value={artist}
-          onChange={handleChange}
-          required
-        />
-        <br />
+        <input type="text" id="artist" name="artist" required /><br />
 
         <label htmlFor="url">URL:</label>
-        <input
-          type="text"
-          id="url"
-          name="url"
-          value={url}
-          onChange={handleChange}
-          required
-        />
-        <br />
-
-        {error && <p className="error">{error}</p>}
-
-        <img src={thumbnail} alt="thumbnail" />
-        <br />
+        <input type="text" id="url" name="url" required /><br />
 
         <input type="submit" value="Submit" />
       </form>
+    </main>
+  </div>
+);
 
-      <h2>Posts</h2>
-      {posts.length > 0 ? (
-        <ul>
-          {posts.map((post, index) => (
-            <li key={index}>
-              <h3>{post.title}</h3>
-              <p>Artist: {post.artist}</p>
-              <p>URL: {post.url}</p>
-              <img src={post.thumbnail} alt="thumbnail" />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No posts yet</p>
-      )}
-    </div>
-  );
 }
