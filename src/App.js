@@ -8,18 +8,9 @@ import { Routes, Route, Navigate, Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
 export default function App(props) {
-  const [currentForm, setCurrentForm] = useState('login');
-
-  const toggleForm = (formName) => {
-    setCurrentForm(formName);
-  }
-
   return (
     <div>
       <Routes>
-        <Route path="/login" element={<Login onFormSwitch={toggleForm} />} />
-        <Route path="/register" element={<Register onFormSwitch={toggleForm}/>} />
-        <Route path="/login" element={<Login />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/profile" element={<UserProfile 
           profilePic="../public/img/taylor_swift_eras_tour_1.jpeg" 
@@ -29,7 +20,6 @@ export default function App(props) {
           userAnthem="Maroon"
           favArtist="Taylor Swift"
           favGenre="Pop"  />} />
-        {/*<Route path="/comment" element={<CommentViewPost postId={2} />} /> */}
         <Route path="/newPost" element={<NewPost />} />
         <Route path="*" element={<Navigate to="/home"/>} />
       </Routes>

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import _ from 'lodash';
 import { FacebookShareButton, TwitterShareButton} from 'react-share';
 import { FacebookIcon, TwitterIcon} from 'react-share';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 const EXAMPLE_POSTS = [
   { id: '1', username: 'ryo.h', songTitle: 'Racing into the night - Yoasobi', albumArt: 'img/racingintothenight_Yoasobi.jpeg', link: 'https://www.youtube.com/watch?v=x8VYWazR5mE', time: '2023-05-15T12:00:0000' },
@@ -10,10 +11,11 @@ const EXAMPLE_POSTS = [
 
 /*Takes in a post object with post id, username, song title, album art source, 
   a link to the song on youtube, and the time of posting */
-function Post({ post/*, setPostId */}) {
+function Post({ post }) {
   const { username, songTitle, albumArt, link} = post
   const [likes, setLikes] = useState(0);
   const [liked, setLiked] = useState(false);
+
   return (
     <div className='post'>
       <p clasName="username">{username}</p>
@@ -54,13 +56,39 @@ function Post({ post/*, setPostId */}) {
 
 /* Takes in an array of post objects */
 export function Posts() {
-  const orderedPosts = _.reverse(_.sortBy(EXAMPLE_POSTS, EXAMPLE_POSTS.time));
-  const posts = orderedPosts.map((post) => {
+  //const [posts, setPosts] = useState(null);
+  let posts = null;
+  useEffect(() => {
+    const db = getDatabase();
+    const postsRef = ref(db, "posts")
+
+    onValue(postsRef, (snapshot) => {
+      const postsValue = snapshot.val();
+      console.log(postsValue);
+      console.log(posts);
+    })
+
+    const unregisterFunction = onValue(postsRef, (snapshot) => {
+      const postsValue = snapshot.val();
+      //...set state variable, etc...
+    })
+
+    function cleanup() {
+      unregisterFunction(); //call the unregister function
+    }
+    return cleanup;
+  })
+
+  //posts = 
+
+  /*const orderedPosts = _.reverse(_.sortBy(POSTS, POSTS.time));
+  const displayedPosts = orderedPosts.map((post) => {
     return <Post post={post} />
-  });
+  });*/
+
   return (
     <div className='posts'>
-      {posts}
+      {/*{displayedPosts}*/}
     </div>
   );
 }
