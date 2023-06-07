@@ -31,18 +31,22 @@ function Post({ post/*, setPostId */}) {
             {likes} Likes
           </button>
           </div>
-          <FacebookShareButton
-            url={link}
-            quote={songTitle}
-          >
-            <FacebookIcon size={21} round />
-          </FacebookShareButton>
-          <TwitterShareButton
-            url={link}
-            quote={songTitle}
-          >
-            <TwitterIcon size={21} round />
-          </TwitterShareButton>
+          <div className="share-button">
+            <FacebookShareButton
+              url={link}
+              quote={songTitle}
+            >
+              <FacebookIcon size={21} round />
+            </FacebookShareButton>
+          </div>
+          <div className="share-button">
+            <TwitterShareButton
+              url={link}
+              quote={songTitle}
+            >
+              <TwitterIcon size={21} round />
+            </TwitterShareButton>
+          </div>
         </div>
     </div>
   )

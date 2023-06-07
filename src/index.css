@@ -158,16 +158,10 @@ footer p {
   flex-direction: row;
 }
 
-.reactions img {
-  width: 25px;
-  height: 25px;
-  padding: .1em;
+.share-button {
+  margin: 0.2rem;
+  margin-top: 0.6rem;
   justify-content: center;
-  height: 100%;
-}
-
-.reactions img:hover {
-  background-color: lightgrey;
 }
 
 .albumArt {
@@ -182,19 +176,27 @@ footer p {
   z-index: 1;
 }
 
-#login_body, #login_footer{
+.login_body, .login_footer{
   background: linear-gradient(270deg, #ff6978, #b1ede8);
   background-size: 600% 600%;
   animation: gradientBg 20s ease infinite;
   margin-top: 0;
 }
 
-#login_container {
+.login_container {
   padding: 0;
 }
 
-#login_heading {
+.login_heading {
   justify-content: flex-start;
+}
+
+.register_text {
+  text-decoration: underline;
+  border: none;
+  background-color: transparent;
+  font-weight: lighter;
+  font-size: 10px;
 }
 
 .login_footer {
@@ -233,7 +235,7 @@ footer p {
 
 /* Profile page styles */
 #profile_main {
-  margin-top: 100px;
+  padding: 80px;
 }
 
 .profile_link {
@@ -251,6 +253,7 @@ footer p {
 
 .profile-container {
   margin-top: 20px;
+  flex-direction: row;
 }
 
 .profile-picture {

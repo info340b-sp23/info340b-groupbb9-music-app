@@ -28,7 +28,7 @@ export function UserProfile(props) {
       </header>
       <div id="profile_main" className="container profile-container"> 
         <div className="row">
-          <div className="col-lg-4">
+          <div /*className="col-lg-4"*/>
             <img src={props.profilePic} alt="user profile picture" className="profile-picture" />
             <h2 className="profile-username">
               {editMode 
@@ -44,7 +44,7 @@ export function UserProfile(props) {
               ? <button onClick={handleSave}>Save</button>
               : <button onClick={handleEdit}>Edit</button>}
           </div>
-          <div className="col-lg-8">
+          <div /*className="col-lg-8"*/>
             <h2>Anthem 🎧</h2>
             <ul className="profile-favorite-songs">
               <li>
