@@ -55,7 +55,8 @@ function NewPost({ username }) {
       "songTitle": title + " - " + artist,
       "albumArt": thumbnail,
       "link": url,
-      "time": currentDate.getTime().toString()
+      "time": currentTime
+       createdAt: currentTime
       }
       const db = getDatabase();
       const postsRef = ref(db, "posts");
