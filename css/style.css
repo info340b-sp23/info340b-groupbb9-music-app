@@ -135,10 +135,22 @@ footer p {
   flex-direction: row;
 }
 
-.reactions img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+.like-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  
+.like-button {
+  background-color: transparent;
+  fontsize: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+  .like-button.liked {
+    color: #ff69b4;
+    border-color: #ff69b4;
 }
 
 .albumArt {
@@ -280,9 +292,18 @@ label {
 }
 
 /* Media queries */
-@media screen and (min-width: 1000px) {
+@media screen (max-width: 768px) {
   .profile-picture {
     width: 140px;
     height: 140px;
+  }
+  .like-button-container {
+    flex-direction: column;
+  }
+  .like-button {
+    font-size: 12px;
+    margin-bottom: 8px;
+    padding: 6px 14px;
+    border-widte: 0.5px;
   }
 }
