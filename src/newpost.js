@@ -53,12 +53,18 @@ function NewPost({ username }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (title && artist && url) {
-      const newPost = {
-        title,
-        artist,
-        url,
-        thumbnail
-      };
+      const currentDate = new Date();
+      const newPostObj = {
+      "username": "miles",
+      "songTitle": title + " - " + artist,
+      "albumArt": thumbnail,
+      "link": url,
+      "time": currentDate.getTime().toString()
+      }
+      const db = getDatabase();
+      const postsRef = ref(db, "posts");
+      push(postsRef, newPostObj);
+
       setPosts([...posts, newPost]);
       setTitle('');
       setArtist('');
@@ -149,127 +155,3 @@ function NewPost({ username }) {
     </div>
   );
 }
-
-export default NewPost;
-
-  const [thumbnail, setThumbnail] = useState('');
-  const [error, setError] = useState('');
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    if (name === 'url') {
-      const videoId = extractVideoId(value);
-      if (videoId) {
-        setThumbnail(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`);
-        setError('');
-      } else {
-        setThumbnail('');
-        setError('Invalid YouTube URL');
-      }
-    }
-    switch (name) {
-      case 'title':
-        setTitle(value);
-        break;
-      case 'artist':
-        setArtist(value);
-        break;
-      case 'url':
-        setUrl(value);
-        break;
-      default:
-        break;
-    }
-  };
-
-  const extractVideoId = (url) => {
-    const match = url.match(/youtube\.com\/watch\?v=([^\&\?\/]+)/);
-    if (match && match[1]) {
-      return match[1];
-    } else {
-      return null;
-    }
-  };
-  
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Form submitted!');
-    const currentDate = new Date();
-    const newPostObj = {
-      "username": "miles",
-      "songTitle": title + " - " + artist,
-      "albumArt": thumbnail,
-      "link": url,
-      "time": currentDate.getTime().toString()
-    }
-    const db = getDatabase();
-    const postsRef = ref(db, "posts");
-    push(postsRef, newPostObj);
-    // Add form submission logic here
-  };
-
-  return (
-    <div>
-      <nav>
-        <a href="index.html">
-          <span aria-label="Home">
-            <img src="img/beatbuds.png" alt="logo" />
-          </span>
-        </a>
-        <div className="nav-right">
-          <a href="newpost.html" id="addPost">
-            New Post
-          </a>
-          <a id="accountButton">
-            <img src="img/default_account_logo.png" alt="Login" />
-          </a>
-        </div>
-      </nav>
-      <h1 className="newpost_heading">Add New Post</h1>
-      <form className="new_post_form" onSubmit={handleSubmit}>
-        <label htmlFor="title">Title:</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          value={title}
-          onChange={handleChange}
-          required
-        />
-        <br />
-
-        <label htmlFor="artist">Artist:</label>
-        <input
-          type="text"
-          id="artist"
-          name="artist"
-          value={artist}
-          onChange={handleChange}
-          required
-        />
-        <br />
-
-        <label htmlFor="url">URL:</label>
-        <input
-          type="text"
-          id="url"
-          name="url"
-          value={url}
-          onChange={handleChange}
-          required
-        />
-        <br />
-
-        {error && <p className="error">{error}</p>}
-
-        <img src={thumbnail} alt="thumbnail" />
-        <br />
-
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
-  );
-}
-
-export default NewPost;
