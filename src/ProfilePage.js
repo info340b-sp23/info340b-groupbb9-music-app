@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 import { NavBar } from "./Navigation";
 import { Footer } from "./Footer";
+import { db } from './firebase';
 
 export function UserProfile(props) {
   const [editMode, setEditMode] = useState(false);
