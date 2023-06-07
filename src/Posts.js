@@ -56,18 +56,26 @@ function Post({ post }) {
 
 /* Takes in an array of post objects */
 export function Posts() {
-  const db = getDatabase();
-  const postsRef = ref(db, "posts");
   
-  /*const [postsValue, setPostsValue] = useState();
-  const [postsKeysArray, setPostsKeysArray] = useState(Object.keys(postsValue));*/
-
+  
+  const [allPostsArray, setAllPostsArray] = useState(null);
+  /*const [postsKeysArray, setPostsKeysArray] = useState(Object.keys(postsValue));*/
 
   useEffect(() => {
+    const db = getDatabase();
+    const postsRef = ref(db, "posts");
+    const [allPostsArray, setAllPostsArray] = useState([]);
+
     onValue(postsRef, (snapshot) => {
       const postsValue = snapshot.val();
-      const postKeysArray = Object.keys(postsValue);
       console.log(postsValue);
+      const postKeysArray = Object.keys(postsValue);
+      setAllPostsArray(postsKeysArray.map((key) => {
+        const singlePostCopy = {...allPostObjects[key]};
+        singlePostCopy.key = key;
+        return singlePostCopy;
+      }));
+      setAllPostsArray(mapAllPosts(postKeysArray, postsValue));
     });
 
     const unregisterFunction = onValue(postsRef, (snapshot) => {
@@ -82,19 +90,25 @@ export function Posts() {
     return cleanup;
   });
 
-  const allPostsArray = postsKeysArray.map((key) => {
-    const singlePostCopy = {...postsValue[key]};
-    singlePostCopy.key = key;
-    return singlePostCopy;
-  })
-  const orderedPosts = _.reverse(_.sortBy(allPostsArray, allPostsArray.time));
-  const displayedPosts = orderedPosts.map((post) => {
+  function mapAllPosts(postsKeysArray, allPostObjects) {
+    const allPostsArray = postsKeysArray.map((key) => {
+      const singlePostCopy = {...allPostObjects[key]};
+      singlePostCopy.key = key;
+      return singlePostCopy;
+    });
+    console.log(allPostsArray);
+    return allPostsArray;
+  }
+
+  console.log(allPostsArray);
+  //const orderedPosts = _.reverse(_.sortBy(allPostsArray, allPostsArray.time));
+  /*const displayedPosts = orderedPosts.map((post) => {
     return <Post post={post} />
-  });
+  });*/
 
   return (
     <div className='posts'>
-      {displayedPosts}
+      {/*displayedPosts*/}
     </div>
   );
 }

@@ -29,7 +29,7 @@ export function UserProfile(props) {
       <div id="profile_main" className="container profile-container"> 
         <div className="row">
           <div className="profile-left">
-            <img src={https://beat-buds-cc1b1.firebaseapp.com/img/beatbuds.png} alt="user profile picture" className="profile-picture" />
+            <img src={"https:///beat-buds-cc1b1.firebaseapp.com/img/beatbuds.png"} alt="user profile picture" className="profile-picture" />
             <h2 className="profile-username">
               {editMode 
                 ? <input type="text" value={userName} onChange={e => setUserName(e.target.value)} />

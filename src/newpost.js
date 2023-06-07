@@ -33,17 +33,6 @@ function NewPost({ username }) {
       default:
         break;
     }
-    const newPostObj = {
-      "username": "miles",
-      "songTitle": title + " - " + artist,
-      "albumArt": thumbnail,
-      "link": url,
-      "time": Date.now()
-    }
-    const db = getDatabase();
-    const postsRef = ref(db, "posts");
-    push(postsRef, newPostObj)
-
   };
 
   const extractVideoId = (url) => {
@@ -59,6 +48,17 @@ function NewPost({ username }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Form submitted!');
+    const currentDate = new Date();
+    const newPostObj = {
+      "username": "miles",
+      "songTitle": title + " - " + artist,
+      "albumArt": thumbnail,
+      "link": url,
+      "time": currentDate.getTime().toString()
+    }
+    const db = getDatabase();
+    const postsRef = ref(db, "posts");
+    push(postsRef, newPostObj);
     // Add form submission logic here
   };
 
