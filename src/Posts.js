@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { UseState } from "react";
 import _ from 'lodash';
+import { FacebookShareButton, TwitterShareButton, FacebookMessengerShareButton } from 'react-share';
+import { FacebookIcon, TwitterIcon, FacebookMessengerIcon } from 'react-share';
 
 const EXAMPLE_POSTS = [
   { id: '1', username: 'ryo.h', songTitle: 'Racing into the night - Yoasobi', albumArt: 'img/racingintothenight_Yoasobi.jpeg', link: 'https://www.youtube.com/watch?v=x8VYWazR5mE', time: '2023-05-15T12:00:0000' },
@@ -19,7 +21,7 @@ function Post({ post/*, setPostId */}) {
         <p>{songTitle}</p>
         <div class="reactions">
           <button 
-            className={`like-button-${liked ? 'liked' : ''}`}
+            className={`like-button ${liked ? 'liked' : ''}`}
             onClick={() => {
               setLikes(likes + 1);
               setLiked(true);
@@ -27,7 +29,24 @@ function Post({ post/*, setPostId */}) {
           >
             {likes} Likes
           </button>
-          <img src="img/share.png" alt="share"></img>
+          <FacebookShareButton
+            url={link}
+            quote={songTitle}
+          >
+            <FacebookIcon size={21} round />
+          </FacebookShareButton>
+          <FacebookMessengerShareButton
+            url={link}
+            appId="521270401588372"
+          >
+            <FacebookMessengerIcon size={21} round />
+          </FacebookMessengerShareButton>
+          <TwitterShareButton
+            url={link}
+            quote={songTitle}
+          >
+            <TwitterIcon size={21} round />
+          </TwitterShareButton>
         </div>
     </div>
   )
