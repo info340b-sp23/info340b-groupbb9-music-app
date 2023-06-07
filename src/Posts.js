@@ -56,25 +56,23 @@ function Post({ post }) {
 
 /* Takes in an array of post objects */
 export function Posts() {
-  
-  
-  const [allPostsArray, setAllPostsArray] = useState(null);
+  const [allPostsArray, setAllPostsArray] = useState([]);
   /*const [postsKeysArray, setPostsKeysArray] = useState(Object.keys(postsValue));*/
 
   useEffect(() => {
     const db = getDatabase();
     const postsRef = ref(db, "posts");
-    const [allPostsArray, setAllPostsArray] = useState([]);
+    
 
     onValue(postsRef, (snapshot) => {
       const postsValue = snapshot.val();
-      console.log(postsValue);
       const postKeysArray = Object.keys(postsValue);
-      setAllPostsArray(postsKeysArray.map((key) => {
-        const singlePostCopy = {...allPostObjects[key]};
+      const postsArray = postKeysArray.map((key) => {
+        const singlePostCopy = {...postsValue[key]};
         singlePostCopy.key = key;
         return singlePostCopy;
-      }));
+      });
+      setAllPostsArray(postsArray);
       setAllPostsArray(mapAllPosts(postKeysArray, postsValue));
     });
 
@@ -96,19 +94,19 @@ export function Posts() {
       singlePostCopy.key = key;
       return singlePostCopy;
     });
-    console.log(allPostsArray);
+    //console.log(allPostsArray);
     return allPostsArray;
   }
 
   console.log(allPostsArray);
   //const orderedPosts = _.reverse(_.sortBy(allPostsArray, allPostsArray.time));
-  /*const displayedPosts = orderedPosts.map((post) => {
+  const displayedPosts = allPostsArray.map((post) => {
     return <Post post={post} />
-  });*/
+  });
 
   return (
     <div className='posts'>
-      {/*displayedPosts*/}
+      {displayedPosts}
     </div>
   );
 }

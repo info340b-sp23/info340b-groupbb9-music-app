@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { getDatabase, ref, set, onValue, push } from 'firebase/database';
-import React, { useState } from 'react';
+import { NavBar } from './Navigation.js';
 
-function NewPost({ username }) {
+export default function NewPost({ username }) {
   const [title, setTitle] = useState('');
   const [artist, setArtist] = useState('');
   const [url, setUrl] = useState('');
@@ -61,13 +61,13 @@ function NewPost({ username }) {
       const postsRef = ref(db, "posts");
       push(postsRef, newPostObj);
 
-      setPosts([...posts, newPost]);
+      setPosts([...posts, newPostObj]);
       setTitle('');
       setArtist('');
       setUrl('');
       setThumbnail('');
       setError('');
-      console.log('New post created:', newPost);
+      console.log('New post created:', newPostObj);
     } else {
       setError('Please fill in all required fields');
     }
@@ -75,21 +75,7 @@ function NewPost({ username }) {
 
   return (
     <div>
-      <nav>
-        <a href="index.html">
-          <span aria-label="Home">
-            <img src="img/beatbuds.png" alt="logo" />
-          </span>
-        </a>
-        <div className="nav-right">
-          <a href="newpost.html" id="addPost">
-            New Post
-          </a>
-          <a id="accountButton">
-            <img src="img/default_account_logo.png" alt="Login" />
-          </a>
-        </div>
-      </nav>
+      <NavBar />
       <h1 className="newpost_heading">Add New Post</h1>
       <form className="new_post_form" onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>

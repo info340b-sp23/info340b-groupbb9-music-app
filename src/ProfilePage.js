@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 import { NavBar } from "./Navigation";
 import { Footer } from "./Footer";
-import { db } from './firebase';
+import { getDatabase } from 'firebase/database';
 
 export function UserProfile(props) {
   const [editMode, setEditMode] = useState(false);
@@ -18,12 +18,13 @@ export function UserProfile(props) {
   };
 
   const handleSave = async () => {
-    await updateUserOnServer(userId, { userName, userBio, userAnthem, userAnthemURL, favArtist, favGenre });
+    //await updateUserOnServer(userId, { userName, userBio, userAnthem, userAnthemURL, favArtist, favGenre });
     setEditMode(false);
 };
 
   const updateUserOnServer = async (userId, updatedUser) => {
     try {
+        const db = getDatabase();
         const userRef = db.collection('users').doc(userId);
         const result = await userRef.update(updatedUser);
         return result;
