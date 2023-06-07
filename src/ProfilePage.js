@@ -22,6 +22,14 @@ export function UserProfile(props) {
     setEditMode(false);
 };
 
+  const createNewUser = async (userId, userData) => {
+    try {
+        await db.collection('users').doc(userId).set(userData);
+    } catch (error) {
+        console.error('Error creating new user: ', error);
+    }
+};
+
   const updateUserOnServer = async (userId, updatedUser) => {
     try {
         const userRef = db.collection('users').doc(userId);
