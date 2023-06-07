@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getDatabase, ref, set, onValue, push } from 'firebase/database';
 import { NavBar } from './Navigation.js';
-import { FacebookShareButton, TwitterShareButton} from 'react-share';
-import { FacebookIcon, TwitterIcon} from 'react-share';
 import './index.css';
 import { Footer } from "./Footer";
-import { getDatabase, ref, onValue } from 'firebase/database';
 
 
 export default function NewPost({ username }) {
