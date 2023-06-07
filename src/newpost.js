@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getDatabase, ref, set, onValue, push } from 'firebase/database';
 
 function NewPost() {
   const [title, setTitle] = useState('');
@@ -32,6 +33,17 @@ function NewPost() {
       default:
         break;
     }
+    const newPostObj = {
+      "username": "miles",
+      "songTitle": title + " - " + artist,
+      "albumArt": thumbnail,
+      "link": url,
+      "time": Date.now()
+    }
+    const db = getDatabase();
+    const postsRef = ref(db, "posts");
+    push(postsRef, newPostObj)
+
   };
 
   const extractVideoId = (url) => {

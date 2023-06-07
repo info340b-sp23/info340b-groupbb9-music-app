@@ -56,39 +56,45 @@ function Post({ post }) {
 
 /* Takes in an array of post objects */
 export function Posts() {
-  //const [posts, setPosts] = useState(null);
-  let posts = null;
-  useEffect(() => {
-    const db = getDatabase();
-    const postsRef = ref(db, "posts")
+  const db = getDatabase();
+  const postsRef = ref(db, "posts");
+  
+  /*const [postsValue, setPostsValue] = useState();
+  const [postsKeysArray, setPostsKeysArray] = useState(Object.keys(postsValue));*/
 
+
+  useEffect(() => {
     onValue(postsRef, (snapshot) => {
       const postsValue = snapshot.val();
+      const postKeysArray = Object.keys(postsValue);
       console.log(postsValue);
-      console.log(posts);
-    })
+    });
 
     const unregisterFunction = onValue(postsRef, (snapshot) => {
       const postsValue = snapshot.val();
-      //...set state variable, etc...
-    })
+      /*setPostsValue(null);
+      setPostsKeysArray(null);*/
+    });
 
     function cleanup() {
       unregisterFunction(); //call the unregister function
     }
     return cleanup;
+  });
+
+  const allPostsArray = postsKeysArray.map((key) => {
+    const singlePostCopy = {...postsValue[key]};
+    singlePostCopy.key = key;
+    return singlePostCopy;
   })
-
-  //posts = 
-
-  /*const orderedPosts = _.reverse(_.sortBy(POSTS, POSTS.time));
+  const orderedPosts = _.reverse(_.sortBy(allPostsArray, allPostsArray.time));
   const displayedPosts = orderedPosts.map((post) => {
     return <Post post={post} />
-  });*/
+  });
 
   return (
     <div className='posts'>
-      {/*{displayedPosts}*/}
+      {displayedPosts}
     </div>
   );
 }
