@@ -55,8 +55,9 @@ export default function NewPost({ username }) {
       "songTitle": title + " - " + artist,
       "albumArt": thumbnail,
       "link": url,
-      "time": currentTime
-       createdAt: currentTime
+      "time": currentDate.getTime(),
+      "likes": 0
+      /*createdAt: currentTime*/
       }
       const db = getDatabase();
       const postsRef = ref(db, "posts");
@@ -119,22 +120,6 @@ export default function NewPost({ username }) {
 
         <input type="submit" value="Submit" />
       </form>
-
-      <h2>Posts</h2>
-      {posts.length > 0 ? (
-        <ul>
-          {posts.map((post, index) => (
-            <li key={index}>
-              <h3>{post.title}</h3>
-              <p>Artist: {post.artist}</p>
-              <p>URL: {post.url}</p>
-              <img src={post.thumbnail} alt="thumbnail" />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No posts yet</p>
-      )}
     </div>
   );
 }

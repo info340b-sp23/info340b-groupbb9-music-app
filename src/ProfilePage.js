@@ -24,6 +24,7 @@ export function UserProfile(props) {
 
   const createNewUser = async (userId, userData) => {
     try {
+        const db = getDatabase();
         await db.collection('users').doc(userId).set(userData);
     } catch (error) {
         console.error('Error creating new user: ', error);

@@ -15,7 +15,6 @@ function Post({ post }) {
   const { username, songTitle, albumArt, link} = post
   const [likes, setLikes] = useState(0);
   const [liked, setLiked] = useState(false);
-
   return (
     <div className='post'>
       <p clasName="username">{username}</p>
@@ -28,6 +27,7 @@ function Post({ post }) {
             onClick={() => {
               setLikes(likes + 1);
               setLiked(true);
+
             }}
           >
             {likes} Likes
@@ -57,12 +57,14 @@ function Post({ post }) {
 /* Takes in an array of post objects */
 export function Posts() {
   const [allPostsArray, setAllPostsArray] = useState([]);
+  const [postKeysArray, setPostKeysArray] = useState([]);
+  const [postObjects, setPostObjects] = useState([]);
   /*const [postsKeysArray, setPostsKeysArray] = useState(Object.keys(postsValue));*/
+
 
   useEffect(() => {
     const db = getDatabase();
     const postsRef = ref(db, "posts");
-    
 
     onValue(postsRef, (snapshot) => {
       const postsValue = snapshot.val();
@@ -72,14 +74,12 @@ export function Posts() {
         singlePostCopy.key = key;
         return singlePostCopy;
       });
-      setAllPostsArray(postsArray);
-      setAllPostsArray(mapAllPosts(postKeysArray, postsValue));
+      //setAllPostsArray(postsArray);
     });
 
     const unregisterFunction = onValue(postsRef, (snapshot) => {
       const postsValue = snapshot.val();
-      /*setPostsValue(null);
-      setPostsKeysArray(null);*/
+      //setAllPostsArray([]);
     });
 
     function cleanup() {
@@ -98,8 +98,9 @@ export function Posts() {
     return allPostsArray;
   }
 
-  console.log(allPostsArray);
+  //console.log(allPostsArray);
   //const orderedPosts = _.reverse(_.sortBy(allPostsArray, allPostsArray.time));
+  //setAllPostsArray(mapAllPosts(postKeysArray, postObjects));
   const displayedPosts = allPostsArray.map((post) => {
     return <Post post={post} />
   });
