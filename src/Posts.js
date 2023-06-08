@@ -75,7 +75,7 @@ export function Posts() {
         singlePostCopy.key = key;
         return singlePostCopy;
       });
-
+      postsArray.sort((a, b) => b.time - a.time);
       setAllPostsArray(postsArray);
     });
 
@@ -84,6 +84,8 @@ export function Posts() {
     }
     return cleanup;
   }, []);
+
+  
   const displayedPosts = allPostsArray.map((post) => {
     return <Post key={post.key} post={post} />
   });

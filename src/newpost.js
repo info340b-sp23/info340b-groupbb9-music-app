@@ -13,7 +13,7 @@ export default function NewPost({ username }) {
   const [error, setError] = useState('');
   const [posts, setPosts] = useState([]);
 
-  /*const handleChange = (event) => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
     if (name === 'url') {
       const videoId = extractVideoId(value);
@@ -38,7 +38,7 @@ export default function NewPost({ username }) {
       default:
         break;
     }
-  };*/
+  };
 
   const extractVideoId = (url) => {
     const match = url.match(/youtube\.com\/watch\?v=([^\&\?\/]+)/);
@@ -54,13 +54,12 @@ export default function NewPost({ username }) {
     if (title && artist && url) {
       const currentDate = new Date();
       const newPostObj = {
-      "username": "miles",
+      "username": username,
       "songTitle": title + " - " + artist,
       "albumArt": thumbnail,
       "link": url,
       "time": currentDate.getTime(),
       "likes": 0
-      /*createdAt: currentTime*/
       }
       const db = getDatabase();
       const postsRef = ref(db, "posts");
@@ -72,7 +71,8 @@ export default function NewPost({ username }) {
       setUrl('');
       setThumbnail('');
       setError('');
-      console.log('New post created:', newPostObj);
+      console.log('New post created:');
+      console.log(newPostObj);
     } else {
       setError('Please fill in all required fields');
     }
@@ -97,13 +97,13 @@ export default function NewPost({ username }) {
           <h1 className="newpost_heading">Add A New Post</h1>
           <form className="new_post_form" onSubmit={handleSubmit}>
             <label htmlFor="title">Title:</label>
-            <input type="text" id="title" name="title" required /><br />
+            <input type="text" id="title" name="title" onChange={handleChange} required /><br />
 
             <label htmlFor="artist">Artist:</label>
-            <input type="text" id="artist" name="artist" required /><br />
+            <input type="text" id="artist" name="artist" onChange={handleChange} required /><br />
 
             <label htmlFor="url">URL:</label>
-            <input type="text" id="url" name="url" required /><br />
+            <input type="text" id="url" name="url" onChange={handleChange} required /><br />
 
             <input type="submit" value="Submit" />
           </form>

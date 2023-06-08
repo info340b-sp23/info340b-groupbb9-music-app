@@ -14,13 +14,13 @@ export default function App(props) {
         <Route path="/home" element={<HomePage />} />
         <Route path="/profile" element={<UserProfile 
           profilePic="../public/img/taylor_swift_eras_tour_1.jpeg" 
-          userName="Steven"
-          userBio="in my midnight eras~"
+          userName="BB-9"
+          userBio="Up all night"
           userAnthemURL="https://www.youtube.com/watch?v=lvHZjvIyqsk"
           userAnthem="Maroon"
           favArtist="Taylor Swift"
-          favGenre="Pop"  />} />
-        <Route path="/newPost" element={<NewPost />} />
+          favGenre="Pop" />} />
+        <Route path="/newPost" element={<NewPost username="BB-9"/>} />
         <Route path="*" element={<Navigate to="/home"/>} />
       </Routes>
     </div>    

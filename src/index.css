@@ -130,7 +130,7 @@ button:hover {
 }
 
 .post {
-  padding: 0 4em 4em 4em;
+  padding: 4em 4em 4em 4em;
   border-bottom: 3px;
   border-color: black;
   border-bottom-style: solid;
@@ -262,12 +262,12 @@ button:hover {
 }
 
 .profile-picture {
-  width: 20vw;
-  height: 20vw; /* maintain 1:1 aspect ratio */
+  width: 10px;
+  height: 10px; /* maintain 1:1 aspect ratio */
   border: 0.5vw solid ghostwhite; /* adjust border size to scale with image */
   border-radius: 50%;
   display: block;
-  margin-bottom: 2vw; /* adjust margin to scale with image */
+  margin-bottom: 2px; /* adjust margin to scale with image */
 }
 
 .profile-username {
@@ -350,15 +350,15 @@ label {
 @media screen and (min-width: 600px) {
   /* Adjust for tablet */
   .profile-picture {
-    width: 30%;
-    height: 30%;
+    width: 5%;
+    height: 5%;
   }
 }
 
 @media screen and (min-width: 900px) {
   /* Adjust for desktop */
   .profile-picture {
-    width: 50%;
-    height: 50%;
+    width: 10%;
+    height: 10%;
   }
 }
