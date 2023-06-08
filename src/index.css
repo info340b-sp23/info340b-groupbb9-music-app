@@ -4,19 +4,19 @@
 }
 
 html {
-  font-size: 1em;
+  font-size: 62.5%; /* sets 1rem to 10px for easier sizing */
 }
 
 body {
   font-family: "Gill Sans", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* 12px base size */
   color: #333;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 60px;
+  padding-top: 6rem; /* using rem units */
 }
 
 main {
@@ -36,36 +36,31 @@ nav {
 }
 
 nav img {
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem; /* using rem units */
   padding: 0;
   margin: 0;
 }
 
-.nav-left {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.nav-center {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
+.nav-left,
+.nav-center,
 .nav-right {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   align-items: center;
+}
+
+.nav-left {
+  justify-content: flex-start;
+}
+
+.nav-right {
+  justify-content: flex-end;
 }
 
 nav a {
   display: block;
-  padding: 8px;
-  padding: 14px 16px;
+  padding: 1.4rem 1.6rem; /* using rem units */
   color: black;
   text-decoration: none;
 }
@@ -80,30 +75,30 @@ h1 {
   left: 1rem;
   color: ghostwhite;
   text-shadow: 3px 3px 5px rgba(0, 50, 100, 0.5);
-  font-size: 40px;
-  margin-bottom: 20px;
+  font-size: 4rem; /* using rem units */
+  margin-bottom: 2rem; /* using rem units */
 }
 
 label {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: bold;
   display: block;
-  margin-top: 10px;
+  margin-top: 1rem;
   color: ghostwhite;
 }
 
 input {
-  font-size: 14px;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  padding: 1rem;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
   width: 100%;
 }
 
 button {
   font-size: 1rem;
   font-weight: bolder;
-  padding: 10px;
+  padding: 1rem;
   background-color: white;
   cursor: pointer;
 }
@@ -120,7 +115,7 @@ button:hover {
 
 .like-button-,
 .like-button-liked {
-  padding: 5px;
+  padding: .5rem;
   border: none;
 }
 
@@ -264,12 +259,12 @@ button:hover {
 }
 
 .profile-picture {
-  width: 130px;
-  height: 130px;
-  border: 5px solid ghostwhite;
+  width: 20vw;
+  height: 20vw; /* maintain 1:1 aspect ratio */
+  border: 0.5vw solid ghostwhite; /* adjust border size to scale with image */
   border-radius: 50%;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 2vw; /* adjust margin to scale with image */
 }
 
 .profile-username {
@@ -348,16 +343,16 @@ label {
 }
 
 /* Media queries */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
+  /* Adjust for tablet */
   .profile-picture {
-    width: 140px;
-    height: 140px;
+    width: 30%;
   }
 }
 
 @media screen and (min-width: 900px) {
+  /* Adjust for desktop */
   .profile-picture {
-    width: 150px;
-    height: 150px;
+    width: 20%;
   }
 }
