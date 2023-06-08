@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { getDatabase, ref, set, onValue, push } from 'firebase/database';
 import { NavBar } from './Navigation.js';
+import './index.css';
+import { Footer } from "./Footer";
+
 
 export default function NewPost({ username }) {
   const [title, setTitle] = useState('');
@@ -76,50 +79,48 @@ export default function NewPost({ username }) {
   };
 
   return (
-    <div>
-      <NavBar />
-      <h1 className="newpost_heading">Add New Post</h1>
-      <form className="new_post_form" onSubmit={handleSubmit}>
-        <label htmlFor="title">Title:</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          value={title}
-          onChange={handleChange}
-          required
+    <div className="container">
+      <header>
+        <title>BeatBuds - New Post</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <meta name="author" content="Miles Lang" />
+        <meta
+          name="description"
+          content="This website offers a way for friends to share their favorite music with each other and allows them to like, comment, and listen to their friends' posts."
         />
-        <br />
+        <link rel="icon" type="image/png" href="img/beatbuds.png" />
+        <script type="text/javascript" src="helper.js"></script>
+      </header>
+      <main>
+        <nav>
+          <a href="index.html">
+            <span aria-label="Home">
+              <img src="img/beatbuds.png" alt="logo" />
+            </span>
+          </a>
+          <div className="nav-right">
+            <a href="newpost.html" id="addPost">
+              New Post
+            </a>
+            <a id="accountButton" onClick={accountDirect}>
+              <img src="img/default_account_logo.png" alt="Login" />
+            </a>
+          </div>
+        </nav>
+        <h1 className="newpost_heading">Add New Post</h1>
+        <form className="new_post_form" onSubmit={handleSubmit}>
+          <label htmlFor="title">Title:</label>
+          <input type="text" id="title" name="title" required /><br />
 
-        <label htmlFor="artist">Artist:</label>
-        <input
-          type="text"
-          id="artist"
-          name="artist"
-          value={artist}
-          onChange={handleChange}
-          required
-        />
-        <br />
+          <label htmlFor="artist">Artist:</label>
+          <input type="text" id="artist" name="artist" required /><br />
 
-        <label htmlFor="url">URL:</label>
-        <input
-          type="text"
-          id="url"
-          name="url"
-          value={url}
-          onChange={handleChange}
-          required
-        />
-        <br />
+          <label htmlFor="url">URL:</label>
+          <input type="text" id="url" name="url" required /><br />
 
-        {error && <p className="error">{error}</p>}
-
-        <img src={thumbnail} alt="thumbnail" />
-        <br />
-
-        <input type="submit" value="Submit" />
-      </form>
+          <input type="submit" value="Submit" />
+        </form>
+      </main>
     </div>
   );
 }

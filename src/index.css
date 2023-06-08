@@ -4,23 +4,23 @@
 }
 
 html {
-  font-size: 1em;
+  font-size: 62.5%; /* sets 1rem to 10px for easier sizing */
 }
 
 body {
   font-family: "Gill Sans", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* 12px base size */
   color: #333;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-top: 6rem; /* using rem units */
 }
 
 main {
   width: 100%;
-  margin-top: 100px;
 }
 
 nav {
@@ -32,40 +32,35 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 nav img {
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem; /* using rem units */
   padding: 0;
   margin: 0;
 }
 
-.nav-left {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.nav-center {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
+.nav-left,
+.nav-center,
 .nav-right {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   align-items: center;
+}
+
+.nav-left {
+  justify-content: flex-start;
+}
+
+.nav-right {
+  justify-content: flex-end;
 }
 
 nav a {
   display: block;
-  padding: 8px;
-  padding: 14px 16px;
+  padding: 1.4rem 1.6rem; /* using rem units */
   color: black;
   text-decoration: none;
 }
@@ -80,30 +75,30 @@ h1 {
   left: 1rem;
   color: ghostwhite;
   text-shadow: 3px 3px 5px rgba(0, 50, 100, 0.5);
-  font-size: 40px;
-  margin-bottom: 20px;
+  font-size: 4rem; /* using rem units */
+  margin-bottom: 2rem; /* using rem units */
 }
 
 label {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: bold;
   display: block;
-  margin-top: 10px;
+  margin-top: 1rem;
   color: ghostwhite;
 }
 
 input {
-  font-size: 14px;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  padding: 1rem;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
   width: 100%;
 }
 
 button {
   font-size: 1rem;
   font-weight: bolder;
-  padding: 10px;
+  padding: 1rem;
   background-color: white;
   cursor: pointer;
 }
@@ -112,28 +107,16 @@ button:hover {
   background-color: lightgrey;
 }
 
-.edit-button, .save-button{
+.edit-button,
+.save-button {
   width: 100%;
   border: solid;
 }
 
-.like-button-, .like-button-liked {
-  padding: 5px;
+.like-button-,
+.like-button-liked {
+  padding: .5rem;
   border: none;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 0;
-  margin-top: auto;
-  z-index: 2;
-}
-
-footer p {
-  margin: 0;
 }
 
 /* additional style(class selectors) */
@@ -158,6 +141,24 @@ footer p {
   flex-direction: row;
 }
 
+.like-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  
+.like-button {
+  background-color: transparent;
+  fontsize: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+  .like-button.liked {
+    color: #ff69b4;
+    border-color: #ff69b4;
+}
+
 .share-button {
   margin: 0.2rem;
   margin-top: 0.6rem;
@@ -176,7 +177,8 @@ footer p {
   z-index: 1;
 }
 
-.login_body, .login_footer{
+.login_body,
+.login_footer {
   background: linear-gradient(270deg, #ff6978, #b1ede8);
   background-size: 600% 600%;
   animation: gradientBg 20s ease infinite;
@@ -200,7 +202,7 @@ footer p {
 }
 
 .login_footer {
-  width:100%;
+  width: 100%;
   position: fixed;
   bottom: 0;
 }
@@ -257,18 +259,18 @@ footer p {
 }
 
 .profile-picture {
-  width: 130px;
-  height: 130px;
-  border: 5px solid ghostwhite;
+  width: 20vw;
+  height: 20vw; /* maintain 1:1 aspect ratio */
+  border: 0.5vw solid ghostwhite; /* adjust border size to scale with image */
   border-radius: 50%;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 2vw; /* adjust margin to scale with image */
 }
 
 .profile-username {
   font-size: 3rem;
   margin-bottom: 10px;
-  text-shadow: 2px 1px 6px rgba(0, 50, 100, 0.5) ;
+  text-shadow: 2px 1px 6px rgba(0, 50, 100, 0.5);
 }
 
 .profile-bio {
@@ -276,12 +278,16 @@ footer p {
   margin-bottom: 20px;
 }
 
-.profile-favorite-artists, .profile-favorite-genres, .profile-favorite-songs {
+.profile-favorite-artists,
+.profile-favorite-genres,
+.profile-favorite-songs {
   background-color: #fffcf900;
   padding: 0;
 }
 
-.profile-favorite-artists li, .profile-favorite-genres li, .profile-favorite-songs li {
+.profile-favorite-artists li,
+.profile-favorite-genres li,
+.profile-favorite-songs li {
   margin-bottom: 13px;
   border: 6px solid #fffcf9;
   background-color: #fffcf9;
@@ -292,13 +298,18 @@ footer p {
 /*new post css*/
 .new_post_form {
   width: 30%;
-  margin: auto;
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .newpost_heading {
+  justify-content: flex-start;
   text-align: center;
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-direction: column;
   padding: 0;
 }
 
@@ -307,7 +318,7 @@ label {
 }
 
 /*login page css*/
-.login_reactive_field .login_button{
+.login_reactive_field .login_button {
   color: black;
 }
 
@@ -324,84 +335,6 @@ label {
   }
 }
 
-/*comment_viewpost css*/
-.comment-content {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.comment-music-post {
-  flex: 1;
-  max-width: 600px;
-  margin-right: 20px;
-  padding: 4em;
-  border-bottom: 3px;
-  border-color: black;
-  border-bottom-style: solid;
-}
-
-.comment-albumArt {
-  width: 500px;
-  height: 500px;
-  transition: all 0.3s ease-in-out;
-}
-
-.comment-albumArt:hover {
-  transform: scale(1.05);
-}
-
-.comment-username {
-  font-weight: bold;
-}
-
-.comment-comments-section {
-  flex: 1;
-  max-width: 400px;
-  margin-top: 80px;
-}
-
-.comment-form {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.comment-input, .comment-textarea {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.comment-button {
-  background-color: #2a9d8f;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.comment-button:hover {
-  background-color: #1f776d;
-}
-
-.comment {
-  margin-bottom: 10px;
-  padding: 5px;
-  border-bottom: 1px solid #ccc;
-}
-
-.comment-user {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.comment-text {
-  margin: 0;
-}
-
 .header-title {
   text-align: center;
   color: black;
@@ -410,15 +343,16 @@ label {
 }
 
 /* Media queries */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
+  /* Adjust for tablet */
   .profile-picture {
-    width: 140px;
-    height: 140px;
+    width: 30%;
   }
 }
+
 @media screen and (min-width: 900px) {
+  /* Adjust for desktop */
   .profile-picture {
-    width: 150px;
-    height: 150px;
+    width: 20%;
   }
 }
