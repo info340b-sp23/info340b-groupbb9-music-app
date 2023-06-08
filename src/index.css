@@ -16,7 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin-top: 60px; /* Add margin to leave space for the navigation bar */
+  padding-top: 60px;
 }
 
 main {
