@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { getDatabase, ref, set, onValue, push } from 'firebase/database';
+import React, { useState } from "react";
+import { getDatabase, ref, push } from 'firebase/database';
 import { NavBar } from './Navigation.js';
 import './index.css';
 import { Footer } from "./Footer";
@@ -13,7 +13,7 @@ export default function NewPost({ username }) {
   const [error, setError] = useState('');
   const [posts, setPosts] = useState([]);
 
-  const handleChange = (event) => {
+  /*const handleChange = (event) => {
     const { name, value } = event.target;
     if (name === 'url') {
       const videoId = extractVideoId(value);
@@ -38,7 +38,7 @@ export default function NewPost({ username }) {
       default:
         break;
     }
-  };
+  };*/
 
   const extractVideoId = (url) => {
     const match = url.match(/youtube\.com\/watch\?v=([^\&\?\/]+)/);
@@ -79,7 +79,7 @@ export default function NewPost({ username }) {
   };
 
   return (
-    <div className="container">
+    <div>
       <header>
         <title>BeatBuds - New Post</title>
         <link rel="stylesheet" href="css/style.css" />
@@ -92,35 +92,24 @@ export default function NewPost({ username }) {
         <script type="text/javascript" src="helper.js"></script>
       </header>
       <main>
-        <nav>
-          <a href="index.html">
-            <span aria-label="Home">
-              <img src="img/beatbuds.png" alt="logo" />
-            </span>
-          </a>
-          <div className="nav-right">
-            <a href="newpost.html" id="addPost">
-              New Post
-            </a>
-            <a id="accountButton" onClick={accountDirect}>
-              <img src="img/default_account_logo.png" alt="Login" />
-            </a>
-          </div>
-        </nav>
-        <h1 className="newpost_heading">Add New Post</h1>
-        <form className="new_post_form" onSubmit={handleSubmit}>
-          <label htmlFor="title">Title:</label>
-          <input type="text" id="title" name="title" required /><br />
+        <NavBar />
+        <div className="container">
+          <h1 className="newpost_heading">Add A New Post</h1>
+          <form className="new_post_form" onSubmit={handleSubmit}>
+            <label htmlFor="title">Title:</label>
+            <input type="text" id="title" name="title" required /><br />
 
-          <label htmlFor="artist">Artist:</label>
-          <input type="text" id="artist" name="artist" required /><br />
+            <label htmlFor="artist">Artist:</label>
+            <input type="text" id="artist" name="artist" required /><br />
 
-          <label htmlFor="url">URL:</label>
-          <input type="text" id="url" name="url" required /><br />
+            <label htmlFor="url">URL:</label>
+            <input type="text" id="url" name="url" required /><br />
 
-          <input type="submit" value="Submit" />
-        </form>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
       </main>
+      <Footer />
     </div>
   );
 }

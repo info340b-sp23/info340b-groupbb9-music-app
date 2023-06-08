@@ -17,11 +17,11 @@ function Post({ post }) {
   const [liked, setLiked] = useState(false);
   return (
     <div className='post'>
-      <p clasName="username">{username}</p>
-        <a href={link}><img src={albumArt} alt="album artwork" class="albumArt"></img></a>
+      <p className="username">{username}</p>
+        <a href={link}><img src={albumArt} alt="album artwork" className="albumArt"></img></a>
         <p>{songTitle}</p>
-        <div class="reactions">
-          <div class="like-button-container">
+        <div className="reactions">
+          <div className="like-button-container">
           <button 
             className={`like-button ${liked ? 'liked' : ''}`}
             onClick={() => {
@@ -60,49 +60,32 @@ export function Posts() {
   const [postKeysArray, setPostKeysArray] = useState([]);
   const [postObjects, setPostObjects] = useState([]);
   /*const [postsKeysArray, setPostsKeysArray] = useState(Object.keys(postsValue));*/
-
+  //let allPostsArray = [];
 
   useEffect(() => {
     const db = getDatabase();
     const postsRef = ref(db, "posts");
 
-    onValue(postsRef, (snapshot) => {
+    const unregisterFunction = onValue(postsRef, (snapshot) => {
       const postsValue = snapshot.val();
       const postKeysArray = Object.keys(postsValue);
+
       const postsArray = postKeysArray.map((key) => {
         const singlePostCopy = {...postsValue[key]};
         singlePostCopy.key = key;
         return singlePostCopy;
       });
-      //setAllPostsArray(postsArray);
-    });
 
-    const unregisterFunction = onValue(postsRef, (snapshot) => {
-      const postsValue = snapshot.val();
-      //setAllPostsArray([]);
+      setAllPostsArray(postsArray);
     });
 
     function cleanup() {
       unregisterFunction(); //call the unregister function
     }
     return cleanup;
-  });
-
-  function mapAllPosts(postsKeysArray, allPostObjects) {
-    const allPostsArray = postsKeysArray.map((key) => {
-      const singlePostCopy = {...allPostObjects[key]};
-      singlePostCopy.key = key;
-      return singlePostCopy;
-    });
-    //console.log(allPostsArray);
-    return allPostsArray;
-  }
-
-  //console.log(allPostsArray);
-  //const orderedPosts = _.reverse(_.sortBy(allPostsArray, allPostsArray.time));
-  //setAllPostsArray(mapAllPosts(postKeysArray, postObjects));
+  }, []);
   const displayedPosts = allPostsArray.map((post) => {
-    return <Post post={post} />
+    return <Post key={post.key} post={post} />
   });
 
   return (
